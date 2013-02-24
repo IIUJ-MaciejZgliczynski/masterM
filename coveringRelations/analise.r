@@ -28,3 +28,13 @@ getPossible = function(possprefix = "", resultprefix="", Debug = FALSE){
 		#print(class(analise(i))
 	}
 }
+
+uniqueAndNoNans = function(input_prefix="poss/periodic_", output_prefix="poss/p_",Debug = FALSE){
+	for(i in 1:5){
+		input_file = paste(input_prefix,i,".txt",sep="")
+		output_file = paste(output_prefix,i,".txt",sep="")
+		data <- read.table(input_file)
+		write.table(x = unique(data[which(data!="NaN"),1]),file = output_file,row.names=FALSE)
+	}
+}
+

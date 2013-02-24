@@ -1,5 +1,5 @@
 # a list of all the programs in your project
-PROGS = coveringRelations
+PROGS = coveringRelations testNewtonfunction
 
 # a list of all your units to be linked with your programs (space separated)
 #OTHERS = utils output

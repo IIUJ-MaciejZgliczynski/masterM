@@ -23,7 +23,7 @@ class DMichelsonPoincareMap{
 		vectorField.setParameter("c", c);
 	}
 	
-	DVector operator () (const DVector &v){
+	virtual DVector operator () (const DVector &v){
 		DVector x(3);
 		x[0] = v[0];
 		x[1] = v[1];
@@ -44,6 +44,63 @@ class DMichelsonPoincareMap{
 			x = (*this)(x);
 		return x;
 		
+	}
+	
+	virtual DVector derivative(const DVector &v, DMatrix &der){
+		
+		DMatrix dp(3,3);
+		DVector x(3);
+		x[0] = v[0];
+		x[1] = v[1];
+		x[2] = 0.0;
+		
+		DVector res = pm(x,dp);
+		dp = pm.computeDP(res,dp);
+		
+		// wydobyc dwa na dwa, 
+		// pamietac od wyobywaniu jedynyki
+		for(int i = 0 ; i < 2 ; ++i)
+			for(int j = 0 ; j < 2 ; ++j)
+				der[i][j] = dp[i][j];
+		DVector result(2);
+		result[0] = res[0];
+		result[1] = res[1];
+		return result;
+	}
+	
+};
+
+class DMichelsonIterationPoincareMap : DMichelsonPoincareMap {
+		int iteration;
+		public :
+			DMichelsonIterationPoincareMap(int order,double step,double c,int _iteration)
+				: DMichelsonPoincareMap(order,step,c), iteration(_iteration)
+			{
+			}
+		
+		virtual DVector operator () (const DVector &v){
+			return iterate(v,iteration);
+		}
+		
+	virtual DVector derivative(const DVector &v, DMatrix &der){
+		
+		DMatrix _der(2,2);
+		for(int i = 0 ; i < 2 ; ++i)
+			for(int j = 0 ; j < 2 ; ++j){
+				if(i == j)
+					der[i][j] = 1.0;
+				else
+					der[i][j] = 0.0;
+			}
+		
+		 // identycznosc
+		DVector x(2);
+		for(int i = 0; i<2;++i) x[i] = v[i];
+		for(int i = 0 ; i < iteration ; ++i){
+			x = DMichelsonPoincareMap::derivative(x,_der);
+			der = _der * der;
+		}
+		return x;
 	}
 };
 
