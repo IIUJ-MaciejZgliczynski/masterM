@@ -1,0 +1,6 @@
+.obj/poincareBoxes.o:(.rodata._ZTVN4capd6covrel17GraphicsTripleSetE[vtable for capd::covrel::GraphicsTripleSet]+0x30): undefined reference to `capd::covrel::TripleSet::outside(capd::vectalg::Vector<capd::filib::Interval<double, (filib::rounding_strategy)1, (filib::interval_mode)0>, 2> const&) const'
+.obj/poincareBoxes.o:(.rodata._ZTVN4capd6covrel17GraphicsTripleSetE[vtable for capd::covrel::GraphicsTripleSet]+0x38): undefined reference to `capd::covrel::TripleSet::inside(capd::vectalg::Vector<capd::filib::Interval<double, (filib::rounding_strategy)1, (filib::interval_mode)0>, 2> const&) const'
+.obj/poincareBoxes.o:(.rodata._ZTVN4capd6covrel17GraphicsTripleSetE[vtable for capd::covrel::GraphicsTripleSet]+0x40): undefined reference to `capd::covrel::TripleSet::across(capd::vectalg::Vector<capd::filib::Interval<double, (filib::rounding_strategy)1, (filib::interval_mode)0>, 2> const&) const'
+.obj/poincareBoxes.o:(.rodata._ZTVN4capd6covrel17GraphicsTripleSetE[vtable for capd::covrel::GraphicsTripleSet]+0x48): undefined reference to `capd::covrel::TripleSet::mapaway(capd::vectalg::Vector<capd::filib::Interval<double, (filib::rounding_strategy)1, (filib::interval_mode)0>, 2> const&) const'
+collect2: ld returned 1 exit status
+make: *** [poincareBoxes] Błąd 1
