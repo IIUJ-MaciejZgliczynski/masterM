@@ -6,16 +6,16 @@
 class DMichelsonPoincareMap{
  public :
 	DFunction section;
-	DMap vectorField;
-	DTaylor solver;
-	DPoincareMap pm;
+	DMap* vectorField;
+	DTaylor* solver;
+	DPoincareMap* pm;
 	DMichelsonPoincareMap(int order , int step, double c) : 
-		section("var:x,y,z,d;fun:z;"),
-		vectorField("par:c;var:x,y,z;fun:y,z,c^2-y-0.5*x*x;"),
-		solver(vectorField,order,step),
-		pm(solver,section)
+		section("var:x,y,z,d;fun:z;")
 	{
-		vectorField.setParameter("c", c);
+		vectorField = new DMap("par:c;var:x,y,z;fun:y,z,c^2-y-0.5*x*x;"),
+		vectorField->setParameter("c", c);
+		solver = new DTaylor(*vectorField,order,step),
+		pm = new DPoincareMap(*solver,section)
 	}
 	
 	DVector operator () (const DVector &v){
@@ -24,7 +24,7 @@ class DMichelsonPoincareMap{
 		x[1] = v[1];
 		x[2] = 0.0;
 		
-		DVector res = pm(x);
+		DVector res = (*pm)(x);
 		DVector result(2);
 		result[0] = res[0];
 		result[1] = res[1];

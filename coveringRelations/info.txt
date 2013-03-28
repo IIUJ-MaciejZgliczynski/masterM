@@ -1,0 +1,12 @@
+wszystko co ma wx
+GraphicsTripleSet.h
+TripleSet.h
+DVector y(2);
+
+capdDynSys/coveringRelation/coveringRelation_2..
+
+template <class S>
+Vector <S,2> to2D(const Vector<S,0> & r){
+	return x(2,y.begin());
+}
+

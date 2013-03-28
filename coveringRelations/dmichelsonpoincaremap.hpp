@@ -5,7 +5,7 @@
 #include "capd/poincare/PoincareMap.hpp"
 #include "capd/capdlib.h"
 #include "capd/krak/krak.h"
-
+#include <iostream>
 using namespace capd;
 
 class DMichelsonPoincareMap{
@@ -23,7 +23,8 @@ class DMichelsonPoincareMap{
 		vectorField.setParameter("c", c);
 	}
 	
-	virtual DVector operator () (const DVector &v){
+	virtual DVector operator () (const DVector &v)
+	{
 		DVector x(3);
 		x[0] = v[0];
 		x[1] = v[1];
@@ -36,18 +37,19 @@ class DMichelsonPoincareMap{
 		return result;
 	}
 	
-	DVector iterate(const DVector &v,int iterations){
+    DVector iterate(const DVector &v,int iterations)
+	{
 		DVector x(2);
 		for(int i = 0 ; i < 2 ; ++i)
 			x[i] = v[i];
 		for(int i = 0 ; i < iterations ; ++i)
-			x = (*this)(x);
+			x = operator ()(x);
 		return x;
 		
 	}
 	
-	virtual DVector derivative(const DVector &v, DMatrix &der){
-		
+	virtual DVector derivative(const DVector &v, DMatrix &der)
+	{
 		DMatrix dp(3,3);
 		DVector x(3);
 		x[0] = v[0];
@@ -70,19 +72,27 @@ class DMichelsonPoincareMap{
 	
 };
 
-class DMichelsonIterationPoincareMap : DMichelsonPoincareMap {
-		int iteration;
+class DMichelsonIterationPoincareMap : public DMichelsonPoincareMap {
+		protected:
+			int iteration;
 		public :
 			DMichelsonIterationPoincareMap(int order,double step,double c,int _iteration)
 				: DMichelsonPoincareMap(order,step,c), iteration(_iteration)
 			{
 			}
 		
-		virtual DVector operator () (const DVector &v){
-			return iterate(v,iteration);
+		virtual DVector operator () (const DVector &v)
+		{	
+			DVector x(2);
+			for(int i = 0 ; i < 2 ; ++i)
+				x[i] = v[i];
+			for(int i = 0 ; i < iteration ; ++i)
+				x = DMichelsonPoincareMap::operator()(x);
+			return x;
 		}
 		
-	virtual DVector derivative(const DVector &v, DMatrix &der){
+	virtual DVector derivative(const DVector &v, DMatrix &der)
+	{
 		
 		DMatrix _der(2,2);
 		for(int i = 0 ; i < 2 ; ++i)
@@ -100,6 +110,7 @@ class DMichelsonIterationPoincareMap : DMichelsonPoincareMap {
 			x = DMichelsonPoincareMap::derivative(x,_der);
 			der = _der * der;
 		}
+	
 		return x;
 	}
 };

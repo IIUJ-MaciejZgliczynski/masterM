@@ -1,0 +1,20 @@
+Potencjalne punkty. 
+Dla orbity 4
+te na osi to :
+y1 = 0, -0.21856378422848149468 
+y2 = 0, -1.2841112993386534225
+
+Poza osia to (tak wyszlo mi z wyliczen) : 
+ 0.642548877679666397, 0.66859936150345056216
+-0.6425488776796693946,0.66859936150344889683
+
+Wiemy ze ma byc symetria (cyfry ktore sie zgadzaja to) 
+y3 =  0.64254887767966 , 0.6685993615034
+y4 = -0.64254887767966 , 0.6685993615034
+
+Dla orbity 2 (tylko na osi) :
+x1 = 0, 0.88930181632132032643
+x2 = 0, -1.0535004937350977983
+
+
+Jak  widzimy roznica miedzy miedzy y3 a i y2 to 0,231799753 na istotnej wspolrzednej.

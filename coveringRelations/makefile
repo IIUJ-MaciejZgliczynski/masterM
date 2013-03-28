@@ -1,5 +1,5 @@
 # a list of all the programs in your project
-PROGS = coveringRelations testNewtonfunction
+PROGS = coveringRelations testNewtonfunction poincareBoxes example testIoTripleSet hsets
 
 # a list of all your units to be linked with your programs (space separated)
 #OTHERS = utils output
@@ -9,7 +9,7 @@ CAPDBINDIR =/home/maciek/Informatyka/Capd/capd/bin/
 
 # setting compiler and linker flags
 CAPDFLAGS = `${CAPDBINDIR}capd-gui-config  --cflags`
-CAPDLIBS = `${CAPDBINDIR}capd-gui-config  --libs`
+CAPDLIBS = `${CAPDBINDIR}capd-gui-config  --libs` 
 CXXFLAGS += ${CAPDFLAGS} -O2 -Wall
 
 # directory where object and dependancy files will be created
