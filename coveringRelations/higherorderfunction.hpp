@@ -34,6 +34,22 @@ void unfilter(InputIterator begin, InputIterator end, Function & f, vec & output
 	
 }
 
+template <class InputIterator, class predicat>
+bool allGood(InputIterator begin , InputIterator end , predicat p){
+	for(;begin!=end; ++begin)
+		if(!p(*begin))
+			return false;
+	return true;
+}
+
+template <class InputIterator, class predicat>
+InputIterator firstWrong(InputIterator begin , InputIterator  end, predicat){
+	for(;begin!=end; ++begin)
+		if(!p(*begin))
+			break;
+	return begin;
+}
+
 //template<class T, class U>
 /*void map(T & op, std::vector<U> & source, std::vector<U> & output){
 	for(typename std::vector<U>::iterator it = source.begin() ; it!= source.end() ; ++it) {

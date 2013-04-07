@@ -13,7 +13,8 @@
 #include "iotripleset.hpp"
 #include "higherorderfunction.hpp"
 #include "triplesetcreator.hpp"
-
+#include "checkers.hpp"
+#include "coveringmaker.hpp"
 
 using namespace std;
 
@@ -21,14 +22,6 @@ using namespace std;
 
 
 
-void getPoints(vector<DVector> & output,const  DVector & p,const DVector & q, int n){
-	double step = 1./n;
-	DVector d = q - p;
-	double s = 0;
-	for (int i = 0; i <= n ; ++i, s+=step){
-		output.push_back(p + s*d);
-	}
-}
 
 template <typename T>
 struct Writer{
@@ -49,23 +42,6 @@ struct Drawer{
 	}
 };
 
-struct OutsideChecker{
-	public :
-		capd::covrel::TripleSet ts;
-		OutsideChecker(const capd::covrel::TripleSet & _ts): ts(_ts){}
-		bool operator ()(const DVector & v){
-			return ts.outside(to2D(v));
-		}
-};
-
-struct AcrossChecker{
-	public :
-		capd::covrel::TripleSet ts;
-		AcrossChecker(const capd::covrel::TripleSet & _ts): ts(_ts){}
-		bool operator() (const DVector & v){
-			return ts.across(to2D(v));
-		}
-};
 
 bool covering(const capd::covrel::TripleSet & covering, const capd::covrel::TripleSet & covered, int n) {
 	
@@ -79,11 +55,11 @@ bool covering(const capd::covrel::TripleSet & covering, const capd::covrel::Trip
 	getPoints(bottom,from2D(covering.A),from2D(covering.B),n);
 	
 	
-	/*Drawer d(BLACK);
-	hof::foreach(left.begin(), left.end(), d);
-	hof::foreach(right.begin(), right.end(),d);
-	hof::foreach(top.begin(), top.end() , d);
-	hof::foreach(bottom.begin(), bottom.end(), d);*/
+	//Drawer d(BLACK);
+	//hof::foreach(left.begin(), left.end(), d);
+	//hof::foreach(right.begin(), right.end(),d);
+	//hof::foreach(top.begin(), top.end() , d);
+	//hof::foreach(bottom.begin(), bottom.end(), d);
 	
 	hof::map(left.begin(), left.end(), pm, cleft);
 	hof::map(right.begin(), right.end(), pm, cright);
@@ -136,6 +112,7 @@ bool covering(const capd::covrel::TripleSet & covering, const capd::covrel::Trip
 	}
 	else
 		hof::foreach(wrongbottom.begin(),wrongbottom.end(), w);
+	
 	
 	return true;
 }
@@ -222,6 +199,12 @@ void prooveCoveringRelationsOrbit2(){
 	
 	covering(t2[0],t2[1],100);
 	covering(t2[1],t2[0],100);
+	
+	CoveringRelationsMaker crm;
+	crm.n = 100;
+	cout << crm.computeCoveringType(t2[0],t2[1]) << endl;
+	cout << crm.computeCoveringType(t2[1],t2[0]) << endl;
+	
 }
 
 
@@ -254,9 +237,9 @@ void poincareMain(){
 			drawStableUnStableDirections(*it,4);
 		}
 		
-		for(vector<DVector>::iterator it = v6.begin() ; it!=v6.end() ; ++it){
+		/*for(vector<DVector>::iterator it = v6.begin() ; it!=v6.end() ; ++it){
 			drawStableUnStableDirections(*it,6);
-		}
+		}*/
 		
 		//draw_orbit((*v2.begin())[1],true,20,0.1,0.49,2);
 		//draw_orbit((*v4.begin())[1],true,10,0.1,0.49,4);

@@ -7,6 +7,8 @@
 #include <string>
 #include <sstream>
 #include <iostream>
+#include <fstream>
+
 std::ostream & operator<< (std::ostream & out , const capd::covrel::TripleSet & set) {
 	out << set.center << std::endl;
 
@@ -45,6 +47,20 @@ capd::covrel::TripleSet getScaled(capd::covrel::TripleSet & tset , T stableh, T 
 	return capd::covrel::TripleSet(tset.center , tset.stable * stableh, tset.unstable * unstableh);
 	
 } 
+
+capd::covrel::TripleSet getTripleSet(const char * name){
+	const char * triplesetPrefix = "covrel/trisets/tset";
+	const char * triplesetSuffix = ".txt";
+	
+	std::stringstream ss;
+	ss << triplesetPrefix << name << triplesetSuffix;
+	std::ifstream myfile;
+	myfile.open(ss.str().c_str());
+	capd::covrel::TripleSet tset ;
+	myfile >> tset;
+	myfile.close();
+	return tset;
+}
 
 /*capd::covrel::GraphicsTripleSet upgradToGraphical(capd::covrel::TripleSet &tset){
 	return capd::covrel::GraphicsTripleSet(tset.center, tset.stable,tset.unstable);

@@ -7,7 +7,8 @@
 #include <cmath>
 #include <capd/covrel/GraphicsTripleSet.h>
 #include "iotripleset.hpp"
-
+#include "coveringmaker.hpp"
+#include "checkers.hpp"
 //#include "/home/maciek/Informatyka/Capd/capd/capdDynSys/src/capd/covrel/TripleSet.cpp"
 using namespace std;
 

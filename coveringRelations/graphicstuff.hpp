@@ -16,13 +16,13 @@ Frame fr, txt;
 
 // -----------------------------------------------------------------
 
-void initGraphics()
+inline void initGraphics()
 {
    openGW(900,700,WHITE,BLACK);
    rootFrame.Clear();
    txt = Frame(0,0,595,130);
    fr = Frame(5,135,555,585,WHITE,BLACK);
-   fr.setWorldCoord(minx,miny,maxx,maxy);
+   fr.setWorldCoord(minx/2,miny/2,maxx/4,maxy/2);
    fr.line(0.0,miny,0.0,maxy,BLACK);
    fr.line(minx,0.0,maxx,0.0,BLACK);
 }

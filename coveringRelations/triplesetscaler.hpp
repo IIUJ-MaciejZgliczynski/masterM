@@ -2,17 +2,17 @@
 #define TRIPLESETSCALER
 
 
-#inlcude "iotripleset.hpp"
-
+#include "iotripleset.hpp"
+typedef capd::covrel::TripleSet Tset;
 class TripleSetScaler{
-	typedef capd::covrel::TripleSet Tset;
+	
 	protected :
     virtual Tset changeStableDirection(const Tset & original, double d){
 		return Tset(original.center,original.stable * d, original.unstable);
 	}
 	
     virtual Tset changeUnStableDirection(const Tset & original , double d){
-		return Tset(original.center,original.stable , original.unstable);
+		return Tset(original.center,original.stable , original.unstable*d);
 	}
 	
     Tset changeBothDirections(const Tset & original , double d){
@@ -26,7 +26,7 @@ class TripleSetScaler{
 	public :
 		
 	TripleSetScaler(double _h) : strech(_h), shrink(1/_h) {}
-	TripleSetScaler(double _strech, _shrink) : strech(_strech), shrink(_shrink){}
+	TripleSetScaler(double _strech, double _shrink) : strech(_strech), shrink(_shrink){}
 	
     Tset strechStableDirection(const Tset & original){
 			return changeStableDirection(original,strech);
@@ -49,7 +49,7 @@ class TripleSetScaler{
 	}
 	
     Tset shrinkBothDirections(const Tset & original){
-			return changeBothDirections(const Tset & orignal,shrink);
+			return changeBothDirections(original,shrink);
 	}
 	
 };
@@ -65,6 +65,9 @@ class SymetricTripleSetScaler : public TripleSetScaler{
 		//return Tset(original.center,original.stable , original.unstable);
 		return changeBothDirections(original,d);
 	}
+	public:
+	SymetricTripleSetScaler(double h): TripleSetScaler(h){}
+	SymetricTripleSetScaler(double a,double b) : TripleSetScaler(a,b){}
 };
 
 #endif
