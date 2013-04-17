@@ -35,7 +35,15 @@ void unfilter(InputIterator begin, InputIterator end, Function & f, vec & output
 }
 
 template <class InputIterator, class predicat>
-bool allGood(InputIterator begin , InputIterator end , predicat p){
+bool allGood(InputIterator begin , InputIterator end , predicat & p){
+	for(;begin!=end; ++begin)
+		if(!p(*begin))
+			return false;
+	return true;
+}
+
+template <class InputIterator, class predicat>
+bool forall(InputIterator begin , InputIterator end , predicat & p){
 	for(;begin!=end; ++begin)
 		if(!p(*begin))
 			return false;

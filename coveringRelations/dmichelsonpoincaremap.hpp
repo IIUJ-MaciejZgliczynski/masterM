@@ -14,8 +14,8 @@ class DMichelsonPoincareMap{
 	DMap vectorField;
 	DTaylor solver;
 	DPoincareMap pm;
-	DMichelsonPoincareMap(int order , int step, double c) : 
-		section("var:x,y,z,d;fun:z;"),
+	DMichelsonPoincareMap(int order , double step, double c) : 
+		section("var:x,y,z;fun:z;"),
 		vectorField("par:c;var:x,y,z;fun:y,z,c^2-y-0.5*x*x;"),
 		solver(vectorField,order,step),
 		pm(solver,section)

@@ -276,6 +276,30 @@ capd::covrel::TripleSet bounce(const capd::covrel::TripleSet & tset){
 	return result;
 }
 
+void saveTripleSets(vector<tset> & tsets, vector<string> & tags){
+	if (tags.size() != tsets.size()){
+		cout << "differnet sizes!" << endl;
+		return;
+	}
+	else{
+		int n = tsets.size();
+		const char * triplesetPrefix = "covrel/trisets/good/";
+		const char * triplesetSuffix = ".txt";
+		for(int i = 0 ; i < n ; ++i){
+			stringstream ss;
+			ss << triplesetPrefix;
+			ss << tags[i]  << triplesetSuffix;
+			string str(ss.str());
+			ofstream myfile;
+			myfile.open(str.c_str());	
+			myfile.precision(20);
+			myfile << tsets[i];
+			myfile.close();
+		}
+	}
+	
+}
+
 int main(int argc , char * argv[]){
 	
     initGraphics();
@@ -302,11 +326,20 @@ int main(int argc , char * argv[]){
 		//t4_3 = scaler.shrinkBothDirections(t4_3);
 		t4_3 = scaler.shrinkStableDirection(t4_3);
 		
+		vector<string> tags;
+		
 		ts.push_back(getTripleSet("2_0")); // 0
+		tags.push_back(string("2_0"));
 		ts.push_back(getTripleSet("3_1")); // 1
+		tags.push_back(string("3_1"));
 		ts.push_back(t4_3); // 2 
+		tags.push_back(string("4_3"));
 		ts.push_back(t4_0); // 3 
+		tags.push_back(string("4_0"));
 		ts.push_back(bounce(t4_3)); // 4, to jest 4_2
+		tags.push_back(string("4_2"));
+		
+		
 		Shrinker shrinker(2.0,0.45);
 		hof::foreach(ts.begin(), ts.end(),shrinker);
 		MyDrawer dr;
@@ -324,8 +357,13 @@ int main(int argc , char * argv[]){
 		ec.push_back(Enlarger(ts[3],ts[2],"4_0","4_3"));
 		ec.push_back(Enlarger(ts[4],ts[3],"4_2","4_0"));
 		ec.push_back(Enlarger(ts[1],ts[4],"3_1","4_2"));
+		cout.precision(20);
+		cout << ts[ts.size()-1] << endl;
+		cout << ts[2] << endl;
+		saveTripleSets(ts,tags);
 		for(vector<Enlarger>::iterator it = ec.begin() ; it!=ec.end() ; ++it){
 			(*it)();
+			
 			
 		}
 		

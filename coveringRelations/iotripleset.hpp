@@ -62,6 +62,22 @@ capd::covrel::TripleSet getTripleSet(const char * name){
 	return tset;
 }
 
+capd::covrel::TripleSet getGoodTripleSet(const char * name){
+	const char * triplesetPrefix = "covrel/trisets/good/";
+	const char * triplesetSuffix = ".txt";
+	
+	std::stringstream ss;
+	ss << triplesetPrefix << name << triplesetSuffix;
+	std::ifstream myfile;
+	myfile.open(ss.str().c_str());
+	capd::covrel::TripleSet tset ;
+	myfile >> tset;
+	myfile.close();
+	return tset;
+}
+
+
+
 /*capd::covrel::GraphicsTripleSet upgradToGraphical(capd::covrel::TripleSet &tset){
 	return capd::covrel::GraphicsTripleSet(tset.center, tset.stable,tset.unstable);
 }*/

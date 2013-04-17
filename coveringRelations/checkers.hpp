@@ -29,6 +29,9 @@ struct AcrossChecker{
 		bool operator() (const DVector & v){
 			return ts.across(to2D(v));
 		}
+		bool operator() (const IVector & v){
+			return ts.across(to2D(v));
+		}
 };
 
 struct OnTheLeftChecker{
@@ -38,6 +41,10 @@ struct OnTheLeftChecker{
 		bool operator()(const DVector & v){
 			return ts.onLeft(to2D(v));
 		}
+		
+		bool operator() (const IVector & v){
+			return ts.onLeft(to2D(v));
+		}
 };
 
 struct OnTheRightChecker{
@@ -45,6 +52,9 @@ struct OnTheRightChecker{
 		capd::covrel::TripleSet ts;
 		OnTheRightChecker(const capd::covrel::TripleSet & _ts): ts(_ts){}
 		bool operator()(const DVector & v){
+			return ts.onRight(to2D(v));
+		}
+		bool operator()(const IVector & v){
 			return ts.onRight(to2D(v));
 		}
 };
