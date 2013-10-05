@@ -1,5 +1,5 @@
 # a list of all the programs in your project
-PROGS = coveringRelations testNewtonfunction poincareBoxes example testIoTripleSet hsets tripleSetsFromOrbits selectivedrawing coveringMakerSecondLoop proofOfCoveringRelation2peridicloop
+PROGS = coveringRelations testNewtonfunction poincareBoxes example testIoTripleSet hsets tripleSetsFromOrbits selectivedrawing coveringMakerSecondLoop proofOfCoveringRelation2peridicloop findPeriod3 lastTry TripleSetsForLatex
 
 # a list of all your units to be linked with your programs (space separated)
 #OTHERS = utils output

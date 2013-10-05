@@ -7,8 +7,23 @@
 namespace hof{
 template <class InputIterator, class Function, class vec>
 void map(InputIterator begin, InputIterator end, Function & f, vec & output){
-	for(;begin!=end; ++begin)
+	for(;begin!=end; ++begin){
+		
 		output.push_back(f(*begin));
+	
+	}
+}
+
+template <class InputIterator, class Function, class vec>
+void onlyGoodMap(InputIterator begin, InputIterator end, Function & f, vec & output){
+	for(;begin!=end; ++begin){
+		try{
+		output.push_back(f(*begin));
+		}
+		catch(std::exception& e)
+		{
+		}
+	}
 }
 
 template <class InputIterator, class Function, class vec>

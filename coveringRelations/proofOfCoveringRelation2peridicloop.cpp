@@ -6,7 +6,6 @@
 
 
 #include <capd/covrel/GraphicsTripleSet.h>
-//#include "/home/maciek/Informatyka/Capd/capd/capdDynSys/src/capd/covrel/TripleSet.cpp"
 #include <capd/covrel/TripleSet.h>
 #include <cmath>
 #include "iotripleset.hpp"
@@ -21,9 +20,12 @@ typedef capd::covrel::TripleSet tset;
 typedef capd::covrel::GridSet<IMatrix> GridSet;
 
 #define NOPOSITIVEMESSAGE
-bool Icovering(tset & covering , tset & covered, int N = 10){
+#define DRAWSTUFF
+
+bool Icovering(tset & covering , tset & covered, int N = 99){
 	
-	IMichelsonPoincareMap pm(20,0.1,0.49);
+	//IMichelsonPoincareMap pm(20,0.1,0.49);
+	IMichelsonPoincareMapAndGridWrapper pm(20,0.1,0.49);
 	
 	/*
 	 * Tworzenie gridu zbioru i brzegow
@@ -38,8 +40,9 @@ bool Icovering(tset & covering , tset & covered, int N = 10){
 	//cout << "Created grids" << endl;
 	/*
 	 * Pierwszy etap sprawdzania nakrywania, czy odzworowanie jest w ogole okreslone
-	 * Jesli nie rzuci wyjatek to sie wszystko dobrze zdarzylo
+	 * Jesli nie rzuci wyjatek to sie wszystko to odzworawanie jest okreslone i moge kontynuowac
 	 */
+	pm.setGridSet(gridSet);
 	hof::foreach(gridSet.begin(), gridSet.end(),pm);
 	#ifndef NOPOSITIVEMESSAGE
 	cout << "Didn't blow up so is defined" << endl;
@@ -49,9 +52,13 @@ bool Icovering(tset & covering , tset & covered, int N = 10){
 	 * Obliczam obrazy brzegow
 	 */
 	vector<IVector> leftEdgeImage, rightEdgeImage,bottomEdgeImage,topEdgeImage;
+	pm.setGridSet(leftEdge);
 	hof::map(leftEdge.begin(), leftEdge.end(), pm,leftEdgeImage);
+	pm.setGridSet(rightEdge);
 	hof::map(rightEdge.begin(), rightEdge.end(), pm, rightEdgeImage);
+	pm.setGridSet(bottomEdge);
 	hof::map(bottomEdge.begin(), bottomEdge.end(), pm, bottomEdgeImage);
+	pm.setGridSet(topEdge);
 	hof::map(topEdge.begin(), topEdge.end(), pm, topEdgeImage);
 	
 	/*

@@ -5,6 +5,8 @@
 #include "capd/poincare/PoincareMapJet.h"
 #include "higherorderfunction.hpp"
 #include <capd/covrel/TripleSet.h>
+#include <capd/covrel/GridSet.h>
+#include "vectorconversion.hpp"
 
 
 
@@ -81,7 +83,7 @@ class IMichelsonPoincareMap{
     
     return result;
   }
-  typedef capd::covrel::GridSet<IMatrix> GridSet;
+  
   typedef capd::covrel::TripleSet tset;
   
  /*void operator()(const tset & set, int N = 3, int M = 3){
@@ -90,10 +92,32 @@ class IMichelsonPoincareMap{
 	  //hof::foreach(grid.begin(), grid.end(),pm);
   }*/
   
-  
-  
-  
-  
+  IVector operator ()(C0Rect2Set  & x){
+		return IVector(2, pm(x).begin());
+  }
   
 };
+typedef capd::covrel::GridSet<IMatrix> GridSet;
+class IMichelsonPoincareMapAndGridWrapper : public IMichelsonPoincareMap{
+	public:
+		GridSet gridset;
+		IMichelsonPoincareMapAndGridWrapper(int order, double step, double c) : IMichelsonPoincareMap(order,step,c){
+		}
+		IMichelsonPoincareMapAndGridWrapper(int order, double step, double c, GridSet & _gridset) : IMichelsonPoincareMap(order,step,c){
+			gridset = _gridset;
+		}
+		IVector operator()(const IVector & v){
+			//return IVector(2,pm(C0Rect2Set(v,gridset.coordinateSystem(),gridset.box())).begin());
+			//return IVector(2,IMichelsonPoincareMap::operator()(v + gridset.coordinateSystem()*gridset.box()).begin());
+			C0Rect2Set s(v,gridset.coordinateSystem(),gridset.box());
+			return IVector(2,IMichelsonPoincareMap::operator()(s).begin());
+			
+		}
+		
+		void setGridSet(GridSet _gridset){
+			gridset = _gridset;
+		}
+		
+};
+
 #endif

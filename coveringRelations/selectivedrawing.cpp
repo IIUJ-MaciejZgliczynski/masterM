@@ -300,6 +300,16 @@ void saveTripleSets(vector<tset> & tsets, vector<string> & tags){
 	
 }
 
+void addPeriod3(vector<capd::covrel::TripleSet> & tsets, vector<string> & tags){
+	for(int i = 0 ; i <= 6; ++i){
+		stringstream tag ;
+		tag << "6_" << i;
+		string rTag = tag.str();
+		tsets.push_back(getTripleSet(rTag.c_str()));
+		tags.push_back(rTag);
+	}
+}
+
 int main(int argc , char * argv[]){
 	
     initGraphics();
@@ -336,9 +346,12 @@ int main(int argc , char * argv[]){
 		tags.push_back(string("4_3"));
 		ts.push_back(t4_0); // 3 
 		tags.push_back(string("4_0"));
-		ts.push_back(bounce(t4_3)); // 4, to jest 4_2
+		ts.push_back(bounce(t4_3)); // 4, to jest 4_2, musze odzworowanie R dobrac
 		tags.push_back(string("4_2"));
 		
+		
+		
+		addPeriod3(ts,tags);
 		
 		Shrinker shrinker(2.0,0.45);
 		hof::foreach(ts.begin(), ts.end(),shrinker);
@@ -349,7 +362,9 @@ int main(int argc , char * argv[]){
 		
 		CoveringRelationsMaker crm(1000);
 		cout << "Covers " << crm.coverSequence(ts) << endl;
+		//saveTripleSets(ts,tags);
 		
+	
 		vector<Enlarger> ec;
 		ec.push_back(Enlarger(ts[0],ts[1],"2_0","3_1"));
 		ec.push_back(Enlarger(ts[1],ts[0],"3_1","2_0"));
@@ -360,12 +375,14 @@ int main(int argc , char * argv[]){
 		cout.precision(20);
 		cout << ts[ts.size()-1] << endl;
 		cout << ts[2] << endl;
-		saveTripleSets(ts,tags);
-		for(vector<Enlarger>::iterator it = ec.begin() ; it!=ec.end() ; ++it){
+			for(vector<Enlarger>::iterator it = ec.begin() ; it!=ec.end() ; ++it){
 			(*it)();
 			
 			
 		}
+		
+		
+		
 		
 		waitBt();
 

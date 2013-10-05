@@ -48,6 +48,14 @@ void createTripleSets(vector<DVector> & v, vector<capd::covrel::TripleSet> & out
 	}
 }
 
+
+
+capd::covrel::TripleSet weighedAvrage(const capd::covrel::TripleSet & tset1, const capd::covrel::TripleSet & tset2, double h= 0.5){
+	double t = 1-h;
+	return capd::covrel::TripleSet(tset1.center*h + t*tset2.center,tset1.stable*h + tset2.stable*t, tset2.unstable*h + tset2.unstable*t);
+	// capd::covrel::TripleSet ts((tset1.center+tset2.center)/2, (tset1.stable + tset2.stable)/2, (tset1.unstable + tset2.unstable)/2);
+	 //return ts;
+}
 void zeroutXDoublecoordinate(capd::covrel::TripleSet & tset, double error = 1e-10){
 	 capd::covrel::FloatVector x = tset.center;
 	 if(abs(x[0]) < error ){
@@ -56,14 +64,6 @@ void zeroutXDoublecoordinate(capd::covrel::TripleSet & tset, double error = 1e-1
 		tset = capd::covrel::TripleSet(x,tset.stable,R(tset.stable));
 	 }
 }
-
-capd::covrel::TripleSet weighedAvrage(const capd::covrel::TripleSet & tset1, const capd::covrel::TripleSet & tset2, double h= 0.5){
-	double t = 1-h;
-	return capd::covrel::TripleSet(tset1.center*h + t*tset2.center,tset1.stable*h + tset2.stable*t, tset2.unstable*h + tset2.unstable*t);
-	// capd::covrel::TripleSet ts((tset1.center+tset2.center)/2, (tset1.stable + tset2.stable)/2, (tset1.unstable + tset2.unstable)/2);
-	 //return ts;
-}
-
 class ZeroOutXDoubleCordinate{
 	public:
 		void operator ()(capd::covrel::TripleSet & tset){

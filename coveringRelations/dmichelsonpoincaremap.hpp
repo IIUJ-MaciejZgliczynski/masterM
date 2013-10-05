@@ -3,6 +3,7 @@
 
 #include <stdexcept>
 #include "capd/poincare/PoincareMap.hpp"
+#include "capd/poincare/BasicPoincareMapJet.hpp"
 #include "capd/capdlib.h"
 #include "capd/krak/krak.h"
 #include <iostream>
