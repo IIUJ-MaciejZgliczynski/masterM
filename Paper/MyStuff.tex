@@ -100,6 +100,7 @@ Rozważmy następujące $ h-sety $ $ N_i = h(x_i,u_i,s_i) $ dla $ i \in 1 \cdots
 Niech $ N = \bigcup^5_{i=1} | N_i| $. Niech $ P : \theta \oarrow \theta $ oznacza odwzorowanie Poincare dla układu Michelsona z parametrem $ c = 0.49 $
 
 \begin{lemma}
+\label{num:cov}
  Funkcja częściowa P jest określona na całej swojej dziedzinie.
  Co więcej zachodzą dwa następujące ciągi relacji nakrywających. Mianowicie :
  $$
@@ -112,11 +113,54 @@ Niech $ N = \bigcup^5_{i=1} | N_i| $. Niech $ P : \theta \oarrow \theta $ oznacz
  Dowód komputerowy tego lematu, można przeprowadzić za pomocą załącznonego oprogramowania do tej pracy.
  Warto zauważyć, że te dwie relacje nakrywające są istotnie różne ale mają jeden element wspólny mianowice $ N_2 $.
  
- Korzystając z tego lematu możemy przejść do dowodu kluczowego twierdznie w tej pracy.
- Dowód:
- 
- 
+
 \end{lemma}
+Uwaga do dowodu numerycznego. Udowodniamy, wszystkie relacje nakrywajace 
+Korzystając z tego lematu możemy przejść do dowodu kluczowego twierdznie w tej pracy.
+Dowód:
+Zdefiniujmy $ \Sigma_2 = \{ 2,5 \} $ i odzworowanie szift 
+$$
+  \sigma : \Sigma_2 \ni (x_i)_{i \ in \mathbb Z} \to (x_{i+1})_{i \in \mathbb Z } \in \Sigma_2
+$$
+
+Niech $ p : | N_2 | \cup | N_5 | \oarrow \Sigma2 $ będzie zdefiniowana w następujący sposób:
+$$
+  dom (p) := \{ x \Theta | \forall j \in \mathbb Z, x \in dom(P^{4j}), P^{4j}(x) \in |N_2| cup |N_5| \}
+ 
+  p(x) = (i_j) j \in \mathbb Z \Leftrightarrow P^{4j}(x) \in |N_{i_j}, \text{ dla } x \in dom(p)
+$$
+
+Poniważ zbiory $ N_2, N_5 $ są rozłączne defnincja naszego odzorowania jest poprawna. Cowięcej dla $ x \in dom(p) $ zachodzi :
+$$
+  p(P^4(x)) = \sgima(p(x))
+$$
+.
+Z relacji nakrywających wykazanych w \ref{num:cover}. Możemy wynwnioskować, że zachodzą następujące relacje nakrywające dla odzowrowania $ P $
+\begin{eqnarray}
+
+
+  N_2 \cover{P} N_1 \cover{P} N_2 \cover{P} N_1 \cover{P} N_5 \\
+ 
+  N_2 \cover{P} N_1 \cover{P} N_2 \cover{P} N_1 \cover{P} N_2 \\
+  
+  N_5 \cover{P} N_3 \cover{P} N_4 \cover{P} N_1 \cover{P} N_2 \\
+  
+  N_5 \cover{P} N_3 \cover{P} N_4 \cover{P} N_2 \cover{P} N_5 
+  \end{eqnarray}
+
+  Z tych relacji otrzymujemy, że 
+\begin{eqnarray}
+  N_2 \cover{ P^4 } N_5 \\
+  N_2 \cover{ P^4 } N_2 \\
+  N_5 \cover{ P^4 } N_2 \\
+  N_5 \cover{ P^4 } N_5 \\
+\end{eqnarray}
+
+Z tych relacji i z twiredznia \ref{th:top} otrzymujemy, że odzoworowanie $ p $ jest dobrze określone. Mianowice dowolny $ x \in \Sigma_2 $ 
+jest relazizowany jako pełna orbita. Z twierdznia \ref{th:top} wynika, że dla każdej pełnej orbity istnieje punkt, który ją realizuje. Co więcej
+jeżeli element $ x \in \Sigma_2 $ jest okresowy, to isntieje punkt w $ \p^{-1} $ który jest okresowy. 
+W ten sposób wykazaliśmy, że czwarta iteracja naszego odzoworawania Poincare jest półsprzężona z pełnym sziftem na dwóch symbolach.
+
 
 
 

@@ -87,7 +87,7 @@ Mówimy, że
 
 Intuicyjnie, $N \cover{f} N$ jeżeli $f$ rozciąga $N$ w 
 'nominalnie niestabilnym' kierunku , w taki sposób , że jego rzut na 
-'niestabilny' kierunek w $M$ pokrywa w topologicznei nietrywialny sposób rzut $M$
+'nominalnie niestabilny' kierunek w $M$ pokrywa w topologicznei nietrywialny sposób rzut $M$
 W 'nominalnie stabilnym' kierunku $N$ jest zwężane przez $f$. W rezultacie $N$ jest odzoworwane
 poprzez $M$ w kierunku niestabilnym bez dotykania $M^+$. 
 Warto zauważyć również że stopień $w$ w relacji nakrywającej zależy jedynie
@@ -183,22 +183,22 @@ prosty i chciałbym go tutaj przytoczyć. Zanim jednak przejde do dowodu tego tw
   
   Chcemy wykazać, że dla $ t \in [0,1] $ i $ x \in \bd [-1,1] \times [-1,1] $ zachodzi $ H(t,x) \neq 0 $
   
-  Zauważmy, że $ e1(h_c(1)) = 1 $ ponieważ z definicji dysku poziomego $ h(1) \in N^{-1}_c $ .
+  Zauważmy, że $ \pi_1(h_c(1)) = 1 $ ponieważ z definicji dysku poziomego $ h(1) \in N^{-1}_c $ .
   Zbiór $ N^{-1}_c $ rozbija się na dwie spojne składowe, mianowicie $ \{{-1}\} \times [-1,1] $
   i $ \{1 \} \times [-1,1] $ a więc $ h_c(1) $ musi należeć do jednej z nich. Ponieważ 
   $ h_c $ jest homotopijne z $ [-1,1] \ni x \to (x,0) $ i homotopia ta punkty z  $ \bd [-1,1] $ 
   odwzorowuje na $ N^{-}_c $ z tego wynika , że $ h_c(1) \in \{1\} \times [-1,1] $, czyli $ \pi_1(h_c(1)) = 1 $.
-  Analogicznie $ pi_1(h_c(-1) )= -1 $.
+  Analogicznie $ \pi_1(h_c(-1) )= -1 $.
   
   Taki same rozumowanie tylko na drugiej współrzędnej i dla $ N^{+}_c $ możemy przeprowadzić dla 
-  dysku g i otrzymujemy wtedy, że $ \pi_2(g(-1)) = -1 $ i $ pi_2(g(1)) =  1 $.
+  dysku g i otrzymujemy wtedy, że $ \pi_2(g(-1)) = -1 $ i $ \pi_2(g(1)) =  1 $.
   
   Będziemy dowodzić niewprost. Załóżmy, że insteje $ x \in \bd B_2 $ i $ t \in [0,1] $ takie, że 
  \begin{equation}
     H(t,(x_1,x_2) ) = 0
   \end{equation}
   \begin{equation}
-     ((1-t) \cdot h(x_1) + t \cdot (x1,0)) = ( (1-t) g(x_2) \cdot (0,x2))
+     ((1-t) \cdot h(x_1) + t \cdot (x_1,0)) = ( (1-t) g(x_2) \cdot (0,x2))
   \end{equation}
   
   Mamy dwa przypadki, które nie są rozłączne ale wyczerpują wsztstkie możliwości.
@@ -213,7 +213,7 @@ prosty i chciałbym go tutaj przytoczyć. Zanim jednak przejde do dowodu tego tw
     Analogiczne rozumowanie można przeprowadzić dla $ x = (-1,u) $. Wtedy lewa strona równości wynosiła by $ -1 $ 
     i stosujemy ten sam argument z wartością bezwzględną.
     
-    \item $ x in [-1,1]\times \{ -1,1\} $. \newline
+    \item $ x \in [-1,1]\times \{ -1,1\} $. \newline
     Znowu dla ustalenia uwagi niech $ x = (v,1) $ i obłóżmy obie strony równości operatorem  $ \pi_2 $
     wtedy lewa strona wynosi:
     $ \pi_2((1-t)h(v) + t(v,0)) = (1-t)\pi_2(h(v)) $
@@ -227,8 +227,8 @@ prosty i chciałbym go tutaj przytoczyć. Zanim jednak przejde do dowodu tego tw
   A więc $ \forall t \in [0,1] \quad \forall x \in \bd B_2 \quad H(t,x) \neq 0 $ a więc $ deg(H_t,B_2,0) $ jest dobrze określony i 
   z homotopijnej niezmienniczości zachodzą następujące równości
   $ deg (f,D,0) = deg(H_0,D,0) = deg(H_1,D,0) = deg(Id,D,0) = 1 $ 
-  a więc z własności istnienia rozwiązania istnieje $ x = (x1,x2) \in B_2 $, takie , że $f(x) = 0 $ czyli 
-  $ h_c(x1) = g_c(x2) $ czyli dyski $h,g$ się przecinają.
+  a więc z własności istnienia rozwiązania istnieje $ x = (x_1,x_2) \in B_2 $, takie , że $f(x) = 0 $ czyli 
+  $ h_c(x_1) = g_c(x_2) $ czyli dyski $h,g$ się przecinają.
   
 
 
@@ -325,7 +325,7 @@ Przejdźmy teraz do dowodu twierdzenia.
 Udowodnimy, że istnieje $ x \in \inte N $ taki, że zachodzi 3 punkt twierdzenia i słabsze punkt 
 drugi mianowicie, że 
 \begin{equation}
-  f_i \circ f_{i-1} \circ \dots f_2(\tilde{x}) \in \in N_i , i = 2,...,k+1
+  f_i \circ f_{i-1} \circ \dots f_2(\tilde{x}) \in N_i , i = 2,...,k+1
 \end{equation}
 
 Przeprowadzimy go indukcyjnie ze względu na $k$ czyli na liczbe relacji nakrywających.
@@ -340,7 +340,8 @@ $$
 
 Z wcześniej wykazanego lematu otrzymujemy, że dysk pionowy i poziomy mają conajmniej jeden punkt wspólny 
 a więc istnieje takie $ t_0 \in [-1,1] $ , $ f(b_0(g(t_0))) \in b_e $, a więc szukanym 
-x w twierdzeniu jest punkt $b(_0(g(t)) $.
+x w twierdzeniu jest punkt $b_0(g(t)) $. Z definicji odwzorowania $ g $ wynika, że $ x \in N_0 $ i 
+$ g^{-1}(t) \in B_1(0,1) $.
 Załóżmy, że teraz nasze twierdznie jest prawdziwe dla wszystkich $ j \leq k $, chcemy wykazać 
 prawdziwość dla k+1 jest relacji nakrywających.
 Ponownie korzystając ze spostrzeżenia konstrujemy dysk poziomy $ d $ w $ N_1 $ taki, że
@@ -350,16 +351,16 @@ Korzystając z naszego założenia indukcyjnego dla zbiorów $ N_i , i = 1 \dots
 dysku poziomego $ d $ i pionowego $b_e$ i odpowiednich relacji nakrywających otrzymujemy, że 
 istenije $ \tilde{x} \in N_1$ :
 \begin{enumerate}
- \item $ \tilde{x} = d(t) , \mbox{ dla jakiegoś } \tilde{t} \in [-1,1] $
+ \item $ \tilde{x} = d(t) , \mbox{ dla jakiegoś } \tilde{t} \in (-1,1) $
  \item $ f_i \circ f_{i-1} \circ \dots f_2(\tilde{x}) \in N_i , i = 2,...,k+1$
- \item $ f_{k+1} \circ f_{k} \circ \dots f_2(\tilde{x}) = b_e(z) , \mbox{dla jakiegoś } z \in [-1,1]$
+ \item $ f_{k+1} \circ f_{k} \circ \dots f_2(\tilde{x}) = b_e(z) , \mbox{ dla jakiegoś } z \in [-1,1]$
 \end{enumerate}
 
 Teraz wystarczy wziąć $ x = b_0(g(\tilde{t})) $ ,odpowiednie $ t $. Co kończy 
 dowód indukcyjny, a więc mamy udowodnione twierdzenie z jedynie ze słabszym drugim warunkiem.
-Załóżmy, że istnieje odpowiedni ciąg {\em h-setów } $ N_i , i = 0 \dots k+1 $ i relacji nakrywających
+Załóżmy, że istnieje odpowiedni ciąg {\em h-setów } $ N_i , i = 0 \dots k $ i relacji nakrywających
 $ N_{i-1} \cover{f_i,w_i} N_{i} $ takich, że istnieje ciąg jak w twierdzeniu wyżej ale 
-nie jest spełniony drugi warunek tzn , że istenieje $ x \in N_0 $ i $ 1 < j < k+1 $ takie, że
+nie jest spełniony drugi warunek tzn , że istenieje $ x \in N_0 $ i $ 1 < j < k $ takie, że
 $$
      f_j \circ f_{j-1} \circ \dots f_1(x) \in \bd N_j 
 $$

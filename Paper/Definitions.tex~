@@ -325,7 +325,7 @@ Przejdźmy teraz do dowodu twierdzenia.
 Udowodnimy, że istnieje $ x \in \inte N $ taki, że zachodzi 3 punkt twierdzenia i słabsze punkt 
 drugi mianowicie, że 
 \begin{equation}
-  f_i \circ f_{i-1} \circ \dots f_2(\tilde{x}) \in \in N_i , i = 2,...,k+1
+  f_i \circ f_{i-1} \circ \dots f_2(\tilde{x}) \in N_i , i = 2,...,k+1
 \end{equation}
 
 Przeprowadzimy go indukcyjnie ze względu na $k$ czyli na liczbe relacji nakrywających.
