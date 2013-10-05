@@ -1,0 +1,318 @@
+\title{Układy dynamiczne}
+
+Tu trzeba jakiś wstęp 
+
+\begin{definition}
+ \label{ukladDynamiczny}
+ Parę (X,$\varphi$) nazywamy układem dynamicznym na $X$ jeżeli dla wszystkich  $ x \in X $  oraz $t,s \in \mathbb R $ spełnione są następujące warunki
+    $$  \varphi(x,0) = x$$
+    $$ \varphi(\varphi(x,t),s) = \varphi(x,t+2) $$
+
+
+
+    
+
+%$$
+
+
+\end{definition}
+
+    
+Rozważmy równanie różniczkowe postaci:
+	$$ \dot{x} = f(x) $$
+Gdzie $ f : \mathbb R^n \to \mathbb R^n $ jest funkcją Lipchitzowską ( np jest różniczkowalna klasy $C^1$) . Na mocy twierdzenia Picarda istnieje dokładnie jedno rozwiązanie problemu Cauchy'egp
+  $$ \dot{x} = f(x(t)) $$
+  $$ x(0) = x_0 $$
+
+Z tego twiedzenia wynika również, że rozwiązanie jednoznacznie przedłuża się do rozwiązania wysyconego :
+ $$ I_x \to \mathbb R^n $$ 
+ Gdzie $ I_x$ jest maksymalnmy przedziałem istnieia rozwiąznia. Jeżeli dla każdego  $x \in \mathbb R^n $ 
+ $ I_x = \mathbb R $ to równanie  $ \dot{x} $ indukuje układ dynamiczny:
+  $$
+    \varphi(x_0,t) := x(t)
+  $$
+  
+  Gdzie $x(t) $ jest roziwiązaniem problemu Cauchy'ego.
+  Często zdarza się, żę rozwiązania wysycone nie są określone dla wszystkich czasów na osi liczb rzeczywistych, czyli $ I_x \neq \mathbb R $ dla 
+  pewnych $x \in \mathbb R^n $ . W takim przypadku dane równanie różniczkowe nie indukuje (pełnego) układu dynamicznego tylko 
+  loklany układ dynamiczny.
+
+ \begin{definition}
+  \label{lokalnyUkladDynamiczny}
+  
+    Niech X będzie przestrzenią topologiczną $ \Omega \subset X \times \mathbb R$ podzbiorem takim , że  $ X \times {0} \subset \Omega $ oraz 
+    $ \varphi : \Omega \to X $ będzie ciągłe. Dla  $ x \in X $ określamy 
+	$$ I_x := \{ t \in \mathbb R | (x,t) \in \Omega \}$$
+    Trójkę $(X,\Omega,\varphi) $ nazywamy lokalnym układem dynamicznym, jeżeli są spełnione następujące warunki
+    
+    \begin{enumerate}
+     \item $\Omega $ jest podzbiorem otwartym $ X\times \mathbb R $ oraz dla wszystkich $ x \in X , I_x $ jest przedziałem otartym
+     \item dla każdego $x\in X$
+	$$ \varphi(x,0) = x $$
+     \item jeżeli $x \in X $, $ t \in I_x$ oraz $ s\in I_{\varphi(x,t},$ to $ t+s \in I_x $ oraz $ \varphi(\varphi(x,t),s) = \varphi(x,t+s) $
+     \item jeżeli $ t\in I_x $ to $-t \in I_{\varphi(x,t} $
+    \end{enumerate}
+
+ \end{definition}
+
+ Oczywiście każdy układ dynamiczny jest lokalnym układem dynamicznym. 
+ Pobone definicje można sformułować dla układół z czasem dyskretnym. Mówimy wtedy o dyskretych układach dynamicznych bądź dyskretych lokalnych układach dynamicznych
+ 
+ \begin{definition}
+ \label{iterowanyUkladDynamiczny}
+ 
+ 
+  Niech X będzie przestrzenią topologiczną $ \varphi : X \times \mathbb{Z} \to X $ będzie ciągłe. Parę $ (X,\varphi) $ nazywamy dyskretnym układem dynamicznym,
+  jeżeli dla $ x \in X $ oraz $ m,n \in \mathbb Z $ są spełnione następujące warunki :
+    $$
+      \varphi(x,0) = x \quad
+      \varphi(\varphi(x,m),n) = \varphi(x,m+n)
+    $$
+    
+ \end{definition}
+ 
+ Dyskretne układyn przeważnie definiuje się jako iteracje pewnego homeomorfizum $ f : X \to X $.
+ 
+  $$
+   \varphi(x,n) := f^n(x)
+  $$
+  
+  W takiej sytuacji będziemy pare $(X,f)$ będziemy nazywać dyskretnym układem dynamicznym
+  
+  Analogicznie do przypadku ciągłych układów dynamicznych definujemy pojęcie lokalnego dyskretnego 
+  układu dynamicznego.
+  
+  
+  \begin{definition}
+    Niech $ X $ będzie przestrzenią topologiczną, $\Omega \subset X \times \mathbb Z $ podzbiorem takim, że $ X\times \{0\} \subset \Omega $ 
+    oraz $ \varphi : \Omega \to X $ będzie ciągłe. Dla $ x \in X $ definujemy 
+    $$
+	I_x := \{n \in \mathbb Z | (x,n) \in \Omega \}
+    $$
+    
+    Trójkę $(X,\Omega,\varphi) $ nazywamy lokalnym dyskretnym układem dynamicznym, jeżeli są spełnione następujące warunki
+    
+    \begin{enumerate}
+     \item dla każdego $ x\in X , I_x $ jest przedziałem w $ \mathbb Z $
+     \item dla każdego $x\in X$, 
+	    $$ \varphi(x,0) = x $$
+     \item jeżeli $x \in X $, $ m \in I_x$ oraz $ n\in I_{\varphi(x,m},$ to $ m+n \in I_x $ oraz $ \varphi(\varphi(x,t),n) = \varphi(x,m+n) $
+     \item jeżeli $ m\in I_x $ to $-m \in I_{\varphi(x,t)} $
+    \end{enumerate}
+    
+    
+    
+  \end{definition}
+  
+  Dla pary $(X,f) $ gdzie $X$ to przetrzeń topologiczna a $ f $ to homeomorfizm na obraz można w naturnalny spodób wprowadzić 
+  lokalny dyskretny układ dynamiczny. Definiując go mianowice :
+  $$
+        \varphi(x,0) = x  $$ 
+        $$
+         \forall n \in \mathbb Z , x \in dom(f^n) \varphi(x,n) = f^n(x)
+  $$
+  
+  Jeżeli to będzie jasne z kontektu będziemy korzystali z takiego oznaczania, tzn będziemy parę $(X,f)$ nazywali 
+  (lokalnym) dyskretnym układem dynamicznym skonstruowanym w powyższy sposób.
+
+  \begin{definition}
+   Niech $(X,\Omega,\varphi) $ będzie lokalnym (dyskretnym) układem dynamicznym. Dla punktu $ x \in X $ definujemy orbitę punktu
+   $ x $ jako 
+   $$
+	\orbit x := \{ y \in X |  y = \varphi(x,t) , t \in I_x\}
+   $$
+  \end{definition}
+  
+  \section{Odwzorowanie Poincar\'ego}
+  
+  Bardzo często przy badaniu równań różczniczkowych i związanych z nimi loklanymi układami dynamicznym jest dyskretyzacja czasu.
+  Próbujemy jakoś z naszego lokalnego układu dynamicznego stworzyć lokalny dyskre układ dynamiczny. Istnieją dwie sensowne, wykorzystywane
+  techniki. Pierwsza z nich to ustalenie kroku czasowego $ h \in \mathbb R $ i badanie przesunięć punktów po danym czasie w naszym układzie dynamicznym
+  $$
+    \varphi_t : X \oarrow X,  \varphi_t(x) := \varphi(x,t)
+  $$.
+  
+  Drugim podejściem jest odwzorowanie Poincar\'ego zdefinowane następująco
+  
+  \begin{definition}
+    Niech $\dot(x) = f(x)$ będzie równaniem różniczkowym z prawą stroną gładką, $ f : \mathbb R^n \to \mathbb R^n$. Podzbiór $ \Theta \subset \mathbb R^n $ 
+    będziemy nazywać lokalną sekcją równania $ \dot(x) = f(x) $ , jeżeli
+    
+    \begin{enumerate}
+     \item $ \Theta $ jest rozmaitością wymiaru n-1 bez brzegu
+     \item dla każdego $ x \in \Theta$ pole wektorowe jest tranwersalne do sekcji w x.
+     Mianowcie, iloczyn sklarany $n(x) \cdot f(x) \neq 0 $ gdzie $n(x)$ oznacza wektor normalny do $ \Theta $ w punkcie x
+    \end{enumerate}
+
+  \end{definition}
+  
+  Ponieważ w każdym puncie lokalnej sekcji $ \Theta $ pole wektorowe jest do niej tranwersalne (warunek 2), to każde 
+  rozwiązannie (istnienie i jednoznacznosć mamy z twierdzenia Cauchy-ego Picarda ) z warunkiem początkowym 
+  $ x(0) = x_0 \in \Theta $ musi opuścić sekcję $ \Theta $, czyli:
+      $$
+       \forall x \in \Theta \exists{\epsilon > 0} \forall t \in (0,\epsilon) \varphi(x_0,t) \notin \Theta 
+      $$
+ 
+  Może sie zdarzyć, że pewne punkty z lokalnej sekcji wrócą po pewnym czasie do sekcji $ \Theta $ po pewnym
+  czasie $ t > $, czyli że orbita przetnie ponownie loklaną sekcje po czase $ t > 0 $ . Warunek ten definiuje odwzorowanie Poincar\'ego. Określamy:
+  $$
+    T_x := \{ t > 0 | \varphi(x,t) \in \Theta \}.
+  $$
+
+  \begin{definition} Niech $ \Theta $ będzie lokalną sekcją równania $ \dot(x) = f(x)$. Wtedy odwzorowanie 
+    $ P: \Theta \oarrow \Theta $ określone następująco :
+    \begin{enumerate}
+     \item $ x \in dom(P) \Leftrightarrow T_x \neq 0 $
+     \item $ P(x) := \varphi(x,t_x)$, gdzie $t_x := min{t \in T_x} $
+    \end{enumerate}
+    Nazywamy odwzorowaniem Poincar'ego
+
+  \end{definition}
+  
+Odwzororwanie Poincar\'ego jest często wykorzystywane do szukania rozwiązań okresowych, heteroklicznych lub homokliczynch wyjściowego
+równania różniczkowego. Na przykłąd by udowodnić, że istenieje rozwiązanie okresowe dla okresowe wystarczy pokazać, że pewne odwzorwanie 
+Poincar\'ego ma punkt stały lub okresowy. Do tego już możemy wykorzystać znane narzędzia topologiczne jak chociażby lokalny stopięn Brower.
+
+
+\section{Symetrie}
+
+Wiele układów dynamicznych posiada pewne symetrie lub symetrie odwracania czasu.
+\begin{definition}
+  Homeomorfizm $ S : X \to X $ będziemy nazywać symetrią lokalnego (dyskretnego ) układu dynamicznego $(X,\Omega,\varphi) $ jeżeli ]
+  dla wszystkich $ x \in X $ oraz $ t \in I_x $ zachodzą następujące warunki :
+  \begin{enumerate}
+   \item $ t \in I_{S(x)}$,
+   \item $ S(\varphi(x,t)) = \varphi(S(x),t) $.
+  \end{enumerate}
+
+\end{definition}
+
+
+\begin{definition}
+  Homeomorfizm $ R: X \to X $ nazywamy symetrią odwrócenia czasu w lokalnym (dyskretnym) układzie dynamicznym $ (X,\Omega,\varphi)$,
+  jeżeli dla wszystkich $ x \in X $ oraz $ t \in I_x $ zachodzą warunki 
+  \begin{enumerate}
+   \item $ -t \in I_{R(x)}$,
+   \item $ R(\varphi(x,t)) = \varphi(R(x), -t)$
+  \end{enumerate}
+
+\end{definition}
+
+Dla układów dyskretnych $(X,f) $ definicje tą można zapisać równoważnie jako :
+  $$
+   \forall n \in \mathbb Z, \forall x \in dom(f^n) R(x) \in dom(f^{-n}), f^{-n}(R(x)) = R(f^n(x))
+  $$
+
+\begin{lemma}
+  \label{lem:reversedTime}
+   Niech (X,f) będzie lokalnym dyskrtnym układem dynamicznym, $ R : X\to X $ pewnym homeomorfizmem. R jest 
+   symetrią odwrócenia w czasu dla f wtedy i tylko wtedy, gdy dla wszystkich $ x \in dom(f) $ zachodzi
+   \begin{equation}
+       R(x) \in dom(f^{-1}) \mbox{ oraz } \quad R(f(x)) = f^{-1}(R(x)).
+   \end{equation}
+
+\end{lemma}
+
+\textbf{Dowód:}
+  Zauważmy, że gdy $R$ jest symetrią odwrócenia czasu to warunke z lematu zachodzi. Minowicie z definicji
+  symetri odwrócenia dla $ x \in dom(f) $ zachodzi 
+    \begin{equation}
+	R(f(x)) = R(\varphi(x,1)) = \varphi(R(x),1) = f^{-1}(R(x))
+    \end{equation}
+
+    W ten sposób otrzymamujemy implikacje w jedną strone. Należy teraz udowodnić, że jeżeli dla funkcji $ R $ 
+    zachodzą warunki opisane w tezie lematu to rzeczywiście jest ona symetrią odrócenia w czasie.
+    Mianowice wystarczy wykazać , że $ \forall x \in dom(f^n) $
+    \begin{equation}
+      \label{eq:odwrteza}
+       R(x) \in dom(f^{-n}) \mbox{ oraz } R(f^n(x)) = f^{-n}(R(x))
+    \end{equation}
+
+    Dowód przeprowadzimy w dwóch etapach. Najpierw indukcyjnie dla $ n > 0 $ a następnie dla $ n < 0 $.
+    Dla $ n = 0 $ warunek jest trywialnie spełniony ponieważ $ f^0 := Id $.
+    Dla $ n = 1 $ warunek $ R(f(x)) = f^{-1}(R(x)) $ jest konsekwencją założenia implikacji.
+    Załóżmy teraz, że \eqref{eq:odwrteza} zachodzi dla wszsytkich $ 1 \leq k \leq n $. Chcemy wykazać, że 
+    zachodzi również dla $ n+1$.
+    Niech $ x \in dom(f^{n+1}) $ wtedy mamy $ x \in dom(f) $ oraz $ f(x) \in dom(f^n) $. Z założenia 
+    implikacji otrzymujemy, że $ R(x) \in dom(f^{-1})$ a z założenia indukcyjnego 
+      $$
+	f^{-1}(R(x)) = R(f(x)) \in dom(f^{-n})
+      $$
+      
+      Wynika stąd, że $ R(x) \in dom(f^{-(n+1)}) $ oraz
+     \begin{eqnarray*}
+	  R(f^{n+1}(x))=R(f^n(f(x)))\stackrel{\mbox{\small z zał
+	  ind.}}=\\f^{-n}(R(f(x)))=f^{-n}(f^{-1}(R(x)))=f^{-(n+1)}(R(x)).
+      \end{eqnarray*}
+    Czyli udowodniliśmy krok indukcyjny.
+    Teraz będziemy chcieli wykazać teze dla $ u < 0 $ czyli chcemy pokazać,
+    że jeżeli $ x \in  dom(f^{-n} $ gdzie $ n \in \mathbb N$ to 
+	\begin{equation}
+	  R(x) \in dom(f^n) \quad \mbox{ oraz } R(f^{-n}(x)) = f^{n}(R(x))
+	\end{equation}
+	
+    Niech $ x \in dom(f^{-n}) $ z tego wynika, że $ f^{-n}(x) \in dom(f^n) $
+    Teraz z \eqref{eq:odwrteza} otrzymujey :
+    $$
+      R(f^{-n}(x)) \in dom(f^{-n}) \mbox{ oraz } R(f^{n}(f^{-n}(x))) = f^{-n}(R(f^{-n}(x)))
+    $$
+    
+    Z tego wynika, że
+    $$
+      R(x) = f^{-n}(R(f^{-n}(x))) \in dom(f^n), \quad f^n(R(x)) = R(f^{-n}(x))
+    $$
+    
+    co kończy dowód lematu.
+    
+Często układy dynamiczne, które posiadaj symetrie lub symetrie odwrócenia czasu posiadają również punkty
+których orbity są niezmiennicze względem symetrii. Takie orbity będziemy nazywać symetrycznymi. 
+
+\begin{definition}
+  Niech $(X,\Omega,\varphi) $ będize lokalnym (dyskretnym) układem dynamicznym a H pewną symetrią ( odwrócenia czasu) tego układu.
+  Orbitę punktu $ x\in X $ będziemy nazywać symetryczną, jeżeli $ H(\orbit(x) = \orbit(x). $
+  
+\end{definition}
+
+Przy pewnych założeniach o sekcji Poincar'ego. Symetrie dla całego układu implikuje symetrie dla odwzorowania Poincar'ego.
+Dokładny sformułowanie tego spostrzeżenia zamieszczam poniżej w formie lematu.
+
+\begin{lemma}
+  \label{lem:poincareReverse}
+  Niech $(X,\Omega,\varphi) $ będzie lokalnym układem dynamicznym indukowanym przez pewne równanie różniczkowe, oraz R będzie
+  symetrią odwrócenia czasu dla $ \varphi $. Załóżmy, żę $ \Theta \subset X $ jest loklaną sekcją dla $\varphi$ taką,że
+  $ R(\Theta) = \Theta$. Wtedy $R_{| \Theta} $ jest symetrią odwrócenia czasu dla odwzorowania Poincar'ego $ P: \Theta \oarrow \Theta$.
+\end{lemma}
+
+\textbf{Dowód:}
+Na podstawie wcześniej wykazanego lematu \eqref{lem:reversedTime} wystarczy pokazać, że dla $ x\in dom(P) $ 
+zacodzi
+$$
+  R(x) \in dom(P^{-1}) \mbox{ oraz } R(P(x)) = P^{-1}(R(x))
+$$
+
+Niech $ x \in dom(P)$. Z definicji odwzorwania Poincar'ego istnieje $ t_x > 0 $ takie, że $ P(x) = \varphi(x,t_x)$.
+Chcemy pokazać, że $ R(x) \in dom(P^{-1}) $ oraz $ P^{-1}(R(x)) = R(P(x)) $, dokładniej :
+\begin{enumerate}
+ \item $\varphi(R(x),-t_x) \in \Theta $
+ \item dla $ 0 < t < t_x, \quad \varphi(R(x),-t) \notin \Theta$.
+\end{enumerate}
+Dowód pierwszego punktu wynika z z faktu, że R jest symetrią odwrócenia czasu w układzie ciągłym czyli skoro 
+$ t_x \in I_x $ to z tego wynika, że  $ -t_x \in I_{R(x)} $ i 
+$$
+  \varphi(R(x),-t_x) = R(\varphi(x,t_x)) = R(P(x)) \in R(\Theta)= \Theta
+$$
+Stąd wynika, że $ R(x) \in dom(P^{-1})$ 
+Drugi punkt będziemy dowodzić niewprost. Załóżmy, że nie zachodzi tzn, istnieje pewein 
+$ t \in (0,t_x) $ taki, że $ \varphi(R(x),-t) \in \Theta $. Wtedy z założenia, że R
+jest symetrią odwracania czasu dla naszego układu otrzymujemy :
+ $$
+  R(\varphi(x,t)) = \varphi(R(x), -t) \in \Theta
+ $$ 
+ R jest homeomorfizmem i $ R(\Theta) = \Theta $ a więc również $ R^{-1}(\Theta) = \Theta $,
+ a wtedy:
+ $$
+    \varphi(x,t) = R^{-1}(R(\varphi(x,t))) = R^{-1}(\varphi(R(x),-t)) \in R^{-1}(\Theta) = \Theta.
+ $$
+
+ Czyli otrzymaliśmy sprzeczość z wyborem $t_x$,które była zdefiniowane jako minium czsów w których orbita $ x $ przecina $\Theta$, w ten sposób udowodniliśmy lemat.
+ 

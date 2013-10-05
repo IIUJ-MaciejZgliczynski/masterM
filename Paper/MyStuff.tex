@@ -1,0 +1,132 @@
+
+\section{Dowód numeryczny}
+
+\subsection{Reprezentacja h-setów}
+
+W tej pracy mamy jedynie doczynienia z {\em h-setami} na płaszczyźnie które mają dokładnie jeden kierunek 
+nominalnie stabilny i niestabilny. Dlatego będziemy reprezentować nasze h-sety  w jako następujące trójki 
+$ (x,s,u) $, gdzie $x,s,u \in \mathbb R^2 $ i $s,u$ sa liniowo niezależne. wtedy definuijemy 
+$$
+  |N| := \{v \in \mathbb R^2 | \exists_{t_1,t_2 \in [-1,1]} \quad v = x + t_1 \cdot s + t_2 \cdot u  \}
+      = x + [-1,1]\cdot s + [-1,1]\cdot u 
+$$
+
+Homemorfizm $ c_N $ jest odzwzorowaniem afiniczym zdefiniowanym w nastepujacy sposób 
+$$
+  c_N(v) = A^{-1}(v - x) 
+$$
+
+Gdzie $ A = [u,s] $ jest macierzą kwadratową. Przy takiej reprezentacji $h-setu$ zachodzą następujące równości
+
+\begin{eqnarray}
+  N^- & = & x + \{-1,1\} \cdot s \\
+  N^+ & = & x + u \cdot \{-1,1\}  
+\end{eqnarray}
+
+W takiej sytuacji będziemy o oznaczać $ N = h(x,u,s) $
+
+\subsection{Dowodzenie relacji nakrywającej}
+
+Niech $ M $ będzie $ h-setami$ o jednym kierunku stabilnym i jednym kierunku niestabilnym wtedy 
+$ \mathbb{R}^2 \setminus |M| $ w naturalny 
+sposób rozbija się na cztery części. Mianowice:
+
+\begin{eqnarray}
+  M^T & = & \{ x \in R^2 | \exists_{ t_1 \in (1,\inf), \quad t_2 \in \mathbb R} : x =  \cdot s + t_2 \cdot u  \} \\
+  M^B & = & \{ x \in R^2 | \exists_{ t_1 \in (-\inf, -1), \quad t_2 \in \mathbb R} : x = t_1 \cdot s + t_2 \cdot u  \} \\
+  M^L & = & \{ x \in R^2 | \exists_{ t_1 \in \mathbb R, \quad t_2 \in (-\inf,-1)} : x = t_1 \cdot s + t_2 \cdot u  \} \\
+  M^R & = & \{ x \in R^2 | \exists_{ t_1 \in \mathbb R, \quad t_2 \in (1,\inf)} : x = t_1 \cdot s + t_2 \cdot u  \} \\
+\end{eqnarray}
+
+
+Mając dane $ h-sety $ $ N,M $ i funkcje $ f : \mathbb R^2 \to \mathbb R^2 $ będziemy chcieli wykazać, że  $N \cover{f} M$ , wystarczy 
+wykazać, że zachodzą następujące warunki :
+\begin{enumerate}
+ \item $ f_c(N_c) \cap ( \overline{M^T \cup M^B} ) = \emptyset $
+ \item $ f_c(N^-_c) = N^{-}_1 \cup N^{-}_2 $, $ N^{-}_1 \cap N^{-}_2 = \emptyset $ i $ N^-_1 \subset N^L , N^-_2 \subset N^R $ 
+\end{enumerate}
+
+Oczywiście jeżeli $ N \cover{f} M $ to powyższe dwa warunki są spełnione.
+Pierwszy warunek wynika z faktu, że mając $h_c $ homotopie z definicji relacji nakrywającej z warunku 
+$ h([0,1],N_c) \cap M^+_c = \emptyset $ wynika pierwszy warunek. Z warunku $ h([0,1],N^-_c) \cap M_c = \emptyset $ i z faktu, że nasze 
+odzworowanie jest homotopijne z rzutowaniem, którego stopień po zawężeniu dziedziny do obrazu jest niezerowy wynika drugi warunk.
+
+Implikacja w drugą strone też nie jest trudna. Mianowice zakładając, że zachodzą powyższe dwa warunki można wskazać odpowiednią homotopię,
+która spełni warunki z relacji nakrywającej.
+Mianowicie :
+
+$$
+  h(t,x) = t( \cdot p \cdot \pi_2(x),0) + (1-t)\cdot f(x)
+$$
+
+gdzie $ p \in \{-2,2\} $ w zależności od zachowanie się funkcji $ f $ na $ N^-$. Jeśli $ \pi_2(f_c( -1,-1)) < -1 $ to wtedy bierzemy $ p = -2 $ 
+a jeżeli $ \pi_2(f_c( -1,-1)) > 1 $  to bierzemy $ p = 2 $ . 
+Tak zdefiniowana homotopia spełnia warunki z definicji relacji nakrywającej, ponieważ:
+\begin{enumerate}
+ \item $ h_0(x) = h(0,x) = 0 \cdot p \cdot x + (1-0) \cdot f(x) = f(x) $
+ \item Niech $ x \in N^-_c $, wtedy z wyboru p wynika, że oba elementy których bierzemy kombinacje wypukłą leżą albo w $ M^L $ albo w $ M^R$ 
+ te dwa zbiory są wypukłe a więc ich kombinacja również należy do tego zbioru. Oczywiscie są one rozłączne z $ M_c$.
+ \item Poniważ $ \mathbb R^2 \ (M^T \cup M^B) $ jest zbiorem wypukłym i oba element których kombinacje wypukłą rozważamy należą 
+ zbioru to ich kombinacja również.
+ \item Drugi punkt definicji relacji nakrywającej jest również spełniony w trywialny sposób ponieważ nasze liniowe odzorowanie to jest poprostu
+ $ x \to p \cdot x $ gdzie $ p $ = 2 lub -2.
+\end{enumerate}
+
+Czyli wszystkie warunki dla relacji nakrywającej są spełnione, a więc $N \cover{f} M$. 
+W ten sposób otrzymaliśmy łatwy sposób weryfikowania czy zachodzi dana relacja nakrywająca czy nie. Zauważmy, że powyższe dwa 
+warunki można wyrazić za pomocą odpowiednich nierówności. A więc możemy sprawdzić je na komputerze wykorzystując arytmetykę przedziałową.
+
+\subsection{Kluczowy dowód}
+
+\begin{theorem}
+  Dla każdego paramtru $ c = 0.49 $ układ Michelson jest $ \Sigma_4 $ chaotyczny,
+  czyli, że istnieje odzorowanie Poincar'ego takie, że jest półsprzężone z pełnym sziftem na czterech symbolach.
+\end{theorem}
+
+Dowód:
+
+By wykazać następujące twierdzenie będziemy badać odwzorowanie Poincare'go układu Michelsona z sekcją $ \theta = \{ x \in \mathbb R^3 \} $.
+Dla skrócenia zapisu będziemy utożsamiać naszą sekcje $ \theta $ z $ \mathbb R^2 $.
+Rozważmy następujące $ h-sety $ $ N_i = h(x_i,u_i,s_i) $ dla $ i \in 1 \cdots 5 $ :
+
+\begin{enumerate}
+\item $ x_1 = (0,0.88930181632132043745) $ $ u_1 = (-0.090000000000000010547,-0.036352256923916359543) $ $ s_1 = (0.090000000000000010547,-0.036352256923916359543) $ 
+\item $ x_2 = (0,-1.1688058965368766096) $ $ u_2 = (-0.045478496673335325196,-0.090000000000000010547) $ $ s_2 = (0.041769254863549584722,-0.090000000000000010547) $ 
+\item $ x_3 = (0,-0.21856378422848130039) $ $ u_3 = (0.10799999999999999878,-0.038322644233375995071) $ $ s_3 = (-0.10799999999999999878,-0.038322644233375995071) $ 
+\item $ x_4 = (0.61254887767896715189,0.655149395511700261) $ $ u_4 = (-0.04950000000000000927,-0.022192443886905721673) $ $ s_4 = (0.13050000000000000488,-0.057865711545585452047) $ 
+\item $ x_5 = (-0.61254887767896715189,0.655149395511700261) $ $ u_5 = (-0.13050000000000000488,-0.057865711545585452047) $ $ s_5 = (0.04950000000000000927,-0.022192443886905721673) $ 
+\end{enumerate}
+
+Niech $ N = \bigcup^5_{i=1} | N_i| $. Niech $ P : \theta \oarrow \theta $ oznacza odwzorowanie Poincare dla układu Michelsona z parametrem $ c = 0.49 $
+
+\begin{lemma}
+ Funkcja częściowa P jest określona na całej swojej dziedzinie.
+ Co więcej zachodzą dwa następujące ciągi relacji nakrywających. Mianowicie :
+ $$
+    N_1 \cover{P} N_2 \cover{P} N_1
+ $$
+ $$
+    N_2 \cover{P} N_5 \cover{P} N_3 \cover{P} N_4 \cover{P} N_2 
+ $$
+ 
+ Dowód komputerowy tego lematu, można przeprowadzić za pomocą załącznonego oprogramowania do tej pracy.
+ Warto zauważyć, że te dwie relacje nakrywające są istotnie różne ale mają jeden element wspólny mianowice $ N_2 $.
+ 
+ Korzystając z tego lematu możemy przejść do dowodu kluczowego twierdznie w tej pracy.
+ Dowód:
+ 
+ 
+\end{lemma}
+
+
+
+
+
+
+
+
+
+
+
+
+

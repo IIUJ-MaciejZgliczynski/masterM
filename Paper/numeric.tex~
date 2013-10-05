@@ -1,0 +1,101 @@
+\title{Numeryka}
+
+\section{Arytmetyka Przedziałowa}
+W tym rozdziale chciałbym przedstwiać techniczne podstawy dowodów komputerowo wspieranych
+w dynamice. W jak spsób korzystając z arytmetyki liczb wymiernych o skończonym rozwinięciu
+jesteśmy wstanie udowdnić twierdzenia dotyczące elementów z przestrzeni $ \mathbb R^n$ 
+
+\subsection{Liczby reprezentowalne}
+
+W obliczeniach przeprowadzonych na komputerzez przeważnie korzysta się z liczb zmiennoprzecinkowych typu double 
+zgodnych ze standarder IEEE 754. Standard ten jest zaimplementowany w 
+wielu procesorach, w sczególnosci w komputerach typu PC.
+Opisuję on między innymi sposby zaokrąglania liczb czy zachowanie w przypadku dzielenia przez zero.
+  Każda liczba typu double jest zakodowana jako 64-bitowy ciąg, w którym 54 młodsze bity kodują mantyse (ozn. $m$) a kolejne
+11 bitów koduje wykładnik(ozn. $w$), natomiast najstarszy bit jest bitem znaku (ozn. z). Wtedy wartość tak zakodowanej liczby typu
+double wyliczamy z następującego wzoru :
+
+\begin{equation}\label{eq:kodowanie}
+  x = (-1)^z*m*2^{w+1}
+\end{equation}
+
+Tu może jakiś przykład ?, generaalnie na wikipedii piszą, ż
+
+
+e m ma być libczą naturalną??
+
+
+Zbiór wszystkich liczb, które można przedstawić w ten sposób będzie oznaczany $ \hat{\mathbb{R}} $ a jego 
+liczby będziemy nazywać {\em liczbami reprezentowalnymi}. Przez $ \overline{\mathbb R}$ będziemy ozanczać
+zbiór liczb rzeczywistych rozszerzony o $ \pm \inf$ ze standardowym porządkiem.
+
+Jak już wspominałem wcześniej nie wszystkie liczby rzeczywiste możemy zakodować tak jak podano w \ref{eq:kodowanie}.
+Liczby rzeczywiste, które nie są liczbami reprezentowalnymi możemy przybliżać następującymi suriekcjiami
+
+$ \downarrow \uparrow : \mathbb R \to \hat{\mathbb{R}} $
+$$
+  \downarrow (x) := max \{ y \in \hat{\mathbb{R}} | y \leq x \}
+$$
+$$
+  \uparrow (x) := min \{ y \in \hat{\mathbb{R}} | y \leq x \}
+$$
+
+Wybór któreś z podanych suriekcji, która za pomocą której chcemy przybliżać liczby naturalne jest możliwy poprzez 
+ustawienie odpowiedniej flagi na procesorze.
+Istotną rodziną zbiorów w $ \mathbb R $ jest rodzina przedziałów. Będziemy ją oznaczać poprzez $ \mathbb I $. 
+Jej podzbiór, rodzinę przedziałów o końcach którymi są liczby reprezentowalne będziemy oznaczać poprzez $ \hat{\mathbb I } $.
+Poprzez $ \overline { \mathbb I } $ będziemy oznaczać rodzine przedziałów której końce należą do $  \overline{\mathbb R} $
+
+Dla $ x \in \mathbb R $ definiujemy najmniejszy przedział reprezentowalny zawierający $ x $ przy pomocy funkcji
+$ \updownarrow : \mathbb R \to \hat{\mathbb R } $ jako
+$$
+    \updownarrow (x) := [\downarrow (x), \uparrow (x) ]\in \hat{\mathbb I } 
+$$
+
+W oczywisty sposób funkcje $ \uparrow, \downarrow, \updownarrow $ można zdefinować na podzbiorach zbioru liczb rzeczywistych.
+Dla podzbioru $ A \subset \mathbb R $ 
+\begin{eqnarray*}
+    \uparrow (A) &:=& max \{ \uparrow (a) | in a \in A \} \\
+    \downarrow (A) &:=& min \{ \downarrow (a) | in a \in A \} \\
+    \updownarrow (A) &:=& [\downarrow(A),\uparrow(A)] \\
+\end{eqnarray*}
+
+\section{Arytmetyka przedziałowa}
+Obliczenia na komputerach są jak już wcześniej wspominałem wykonywane najczęściej na liczbach typu $ double $.
+Oczywiście wynik operacji dwóch liczb reprezentowalnych wcale nie musi być liczbą reprezentowalną.
+Jednak chcielibyśmy wykonywać obliczenia ścisłe i by wyniki operacji były wiarygodne i o ile to możliwe precyzyjne.
+Dlatego rosrszerzamy operacje dodwania, odejmowania i dzielenia ze zbioru liczb rzeczywistych na rodzine przedziałów 
+reprezentowalnych.
+
+Niech $ A,B  \subset \overline {\mathbb R } $ będą pewnymi podzbiorami oraz niech $ \diamondsuit $ będzie jedną z operacji elementarnych,
+ $ \diamondsuit \in \{+,-,\cdot,/ \}.$ Wtedy definujemy 
+ \begin{equation}
+    A \diamondsuit B := \{ a \diamondsuit b | a \in A , b \in B  \}.
+ \end{equation}
+
+ Dodatkowo zakładamy, że przy dzieleniu $ \notin B $. W sytuacji w której $ A,B \in \overline{ \mathbb I } $ operacje te sprowadzja 
+ sie do odpowiednich obliczeń na końcach przedziałów, oraz sprawdzenia znaków liczb, będącymi końcami przedziałów $ A,B $.
+ Wynik takiej operacji jest również przedziełem $ A \diamondsuit B \in \hat {\mathbb R } $ .
+ Możemy próbować w ten sposób rozszerzyć podstawowe operacje na przedziały reprezentowalne. Oczywiście wynik takiej operacji
+ niekoniecznie musi być przedziałem reprezentowalnym, dlatego opreacje elementerne na przedziałach reprezentowalnych musimy zdefiniować w
+ następujący spsób 
+ \begin{equation}
+    A \hat{\diamondsuit} B := \updownarrow (A \diamondsuit B ) 
+ \end{equation}
+ gdzie $ \hat { \diamondsuit } $ oznacza operacje elementarną w {\em arytmetyce przedziałowej }. 
+ W ten sposób zdefiniowane operacje arytmetyczne zapewniają, że dla $ X,Y \subset \mathbb R $ zachodzi
+ \begin{equation}
+    X \diamondsuit Y \subset \updownarrow(X) \hat{\diamondsuit} \updownarrow(Y)
+ \end{equation}
+ 
+ o ile prawa strone isntieje. 
+ Operacje na końcach są standartowymi operacjami wykonywanymi sprzętowo. Dzięki temu cechują się one 
+ wysoką wydajnością. 
+ 
+ W mojej pracy jak już wcześniej pisałem będę korzystał z arytmetyki przedziałowej i metod numerycznych zaimplementowanych w Instytucie Informatyki Uniwersytetu 
+ Jagiellońskiego przez grupę badawczą CAPD \cite{CAPD}.
+
+ 
+
+
+% tu Daniel ma komentarz o porównywaniu zbiorów , zobacze czy to będzie istotne

@@ -1,0 +1,35 @@
+\section{Wstęp}
+
+
+
+Istnieją układy dynamiczne, które wykazują pewne zachowania, ale o których nie jesteśmy
+wstanie nic udowodnić analitycznie. Z tego powodu próbujemy przy pomocy metod 
+numerycznych wykazać pewne własności. Dowody komputerowe w dynamice chaotycznej były
+już wykorzystywane w pracach : np Marian Mrozka i K. Mischaikowa \cite{MM} czy 
+w pracy Warwicka Tucker'a \cite{T}.
+
+Komputery w XXI wieku stały się bardzo przydatnymi narzędziami do wyrabiania 
+intuicji i przybliżonych symulacji. Niestety obliczenia na komputerach mają ograniczoną 
+dokładność. Liczby  reprezentowane są na ustalonej, ograniczonej liczbie bitów (przeważnie 64, co daję dokładność rzeędu ).
+Co sprawia, że nie jesteśmy wstanie zaprezentować liczb rzeczywistych.
+Z tego powodu nawet wynik najdokładniejszej metody numerycznej będzie przeważnie rozwiązaniem przybliżeniem.
+
+Probelem ten można próbować udowadniać korzystając z arytmetyki przedziałowej.
+
+Mamtematycy już od XVII wieku próbują rozwiązywąć różne równania różniczkowe.
+Czasami są wstanie wyprowadzić jawne wzory, jak na przykład dla równań liniowych jednak w większości
+przypadków się nie da.
+Często rozważają jedynie istnienie pewnych rodzajów rozwiązań np okresowych, heteroklicznych,
+homoklinicznych czy chaotycznych. Niestety dowody korzystające z metod klasycznych przeważnie mają bardzo 
+sztywne założenia co do prawej strony równania, często zakłada się że jest ono okresowe.
+
+Natomiast w wielu klasycznych równaniach różniczkowych, takich jak rówanie Lorenza, R\"{o}sslera czy Kuramato-Sivashinskiego wykazują 
+zachowanie chaotyczne w symulacjach komputerowych. W 1995 Mischaikow i Mrozek [cytowanie] udowodnili istnienie dynamiki chaotcznej 
+w rówaniach Lorenza. Praca w której ukazał się ten wynik została przez Encyklopedie Britannica uznana jedną z czterech najważniejszych 
+prac metematycznych w 1995 roku. Zgliczyńskie [cyt] wykazał istenie dynamiki chaotycznej w równaniu R\"{o}sslera.
+OB
+
+
+
+
+

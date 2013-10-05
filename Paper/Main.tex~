@@ -1,0 +1,156 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage[polish]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{epsfig}
+\def\oarrow{{\mathrel{\longrightarrow\mkern-25mu\circ}\;\;}}
+\newcommand{\Id}{\mathrm{Id}}
+ \language 1
+
+\def\rep#1{\mbox{$\langle#1\rangle$}}
+\def\qed{{\hfill{\vrule height5pt width3pt depth0pt}\medskip}}
+
+
+\def\rep#1{\mbox{$\langle#1\rangle$}}
+\newfont{\bbc}{msbm10}
+\def\Bbb#1{\hbox{{\bbc #1}}}
+\newcommand{\inte }{{\rm int}\,}
+\newcommand{\diam }{\,{\rm diam}\,}
+\newcommand{\cl }{{\rm cl}\,}
+\newcommand{\sgn }{{\rm sgn}\,}
+\newcommand{\bd }{\partial}
+\newcommand{\im }{\mathrm{Im} \,}
+\newcommand{\ind }{\mathrm{ind} \,}
+\newcommand{\dom }{\mathrm{dom} \,}
+\newcommand{\orbit}[1]{\mathcal O\left(#1\right)}
+\newcommand{\Fix}{\mathrm{Fix}}
+\newcommand{\cover}[1]{\stackrel{#1}{\Longrightarrow}}
+\newcommand{\lcover}[1]{\stackrel{#1}{{=\Longrightarrow}}}
+\newcommand{\coverOned}[1]{\stackrel{#1}{\rightarrow}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definicja}
+
+\hyphenation{
+    mul-ti-variate
+    semi-conju-gated
+    com-pli-ca-ted
+    dy-na-mics
+    he-te-ro-cli-nic
+}
+
+
+\begin{document}
+
+\title{Magisterka Maciej Zgliczyński}
+
+\input Introduction.tex
+\input Notation.tex
+\input BrouwerDegree.tex
+\input Definitions.tex
+\input Dynamics.tex
+\input numeric.tex
+\input Application.tex
+\input MyStuff.tex
+
+
+
+\section{Twierdzenia}
+
+\section{Wyniki numeryczne}
+
+\section{Kod}
+
+
+\begin{thebibliography}{GSS}
+
+\bibitem[N]{N} L. Nirenberg, Topics in Nonlinear Functional Analisys, New York University  1974
+\bibitem[Sch]{Sch} J. Schwartz, Nonlinear Functional Analisys, Gordon and Breach ,New York 1969 
+\bibitem[AM]{AM} Z. Arai and K. Mischaikow, \emph{Rigorous Computations of Homoclinic Tangencies}, SIAM J. on Appl. Dyn. Sys. 5 (2006), 280--292.
+
+
+\bibitem[AZ]{AZ} G. Arioli and P. Zgliczy\'nski, \emph{Periodic, homoclinic and heteroclinic orbits
+for H\'{e}non Heiles Hamiltonian near the critical energy level},
+Nonlinearity, vol. 16, No. 5 (2003), 1833--1852
+
+\bibitem[CAPD]{CAPD}{\rm  CAPD -- Computer Assisted Proofs in Dynamics
+group}, a C++ package for rigorous numerics, {\tt
+http://capd.wsb-nlu.edu.pl.}
+
+\bibitem[D]{D} R.I. Devaney, \emph{A first course in chaotic dynamical systems: Theory and
+experiments}, Addison-Wesley, 1992.
+
+\bibitem[GZ]{GZ} Z. Galias and P. Zgliczy\'nski, \emph{Abundance of homoclinic and heteroclinic orbits and
+rigorous bounds for the topological entropy for the H\'enon map},
+Nonlinearity, 14 (2001) 909--932.
+
+\bibitem[IE]{IE} \emph{The IEEE Standard for Binary Floating-Point
+Arithmetics}, ANSI-IEEE Std 754, (1985).
+
+\bibitem[KWZ]{KWZ} H. Kokubu, D.Wilczak,  P. Zgliczy\'nski,
+ \emph{Rigorous verification of cocoon bifurcations in the Michelson
+system}, Nonlinearity, 20 (2007), 2147-2174.
+
+\bibitem[Li]{Li} Q. Li, \emph{A topological horseshoe in the hyperchaotic R\"ossler attractor},
+Physics Letters A, 372 (2008) 2989--2994.
+\bibitem[L]{L} N. G. Lloyd, \emph{Degree theory}, Cambridge
+Tracts in Math., No. 73, Cambridge Univ. Press, London, 1978
+
+\bibitem[MM]{MM} K. Mischaikow and M. Mrozek,
+\emph{Chaos in Lorenz equations: a computer assisted proof},
+Bull. Amer. Math. Soc. (N.S.), 33(1995), 66-72.
+
+\bibitem[Mo]{Mo} R.E. Moore, \emph{Interval Analysis.} Prentice
+Hall, Englewood Cliffs, N.J., 1966
+
+
+\bibitem[P03]{P03} P. Pilarczyk, \emph{Topological numerical approach to the existence of periodic trajectories in ODE's},
+Discrete and Continuous Dynamical Systems, A Supplement Volume:
+Dynamical Systems and Differential Equations, 701-708 (2003).
+
+
+\bibitem[R76]{R76} O.E. R\"ossler, \emph{An Equation for Continuous Chaos}, Physics Letters, Vol. 57A no 5, pp 397--398, 1976.
+
+\bibitem[R79]{R79} O.E. R\"ossler, \emph{An equation for hyperchaos}, Physics Letters A 71 , no.2-3, (1979), 155--157.
+
+\bibitem[SK]{SK} D. Stoffer and U. Kirchgraber, \emph{Possible chaotic motion of comets in the Sun Jupiter system -
+an efficient computer-assisted approach}, Nonlinearity, 17 (2004)
+281-300.
+
+\bibitem[T]{T} W. Tucker, \emph{A Rigorous ODE solver and Smale's 14th Problem},
+Found. Comput. Math., 2:1, 53-117, 2002.
+
+\bibitem[W]{W} D. Wilczak, {\tt
+http://www.ii.uj.edu.pl/\~{}wilczak.}
+
+\bibitem[WZ]{WZ} D. Wilczak and P. Zgliczy\'nski, \emph{Heteroclinic Connections between Periodic Orbits in
+Planar Restricted Circular Three Body Problem - A Computer Assisted
+Proof}, Comm. Math. Phys.,  234 (2003) 1, 37-75.
+
+\bibitem[WZ2]{WZ2} D. Wilczak and P. Zgliczy\'nski, \emph{Topological method
+for symmetric periodic orbits for maps with a reversing symmetry},
+ Discrete Cont. Dyn. Sys. A 17, 629--652 (2007).
+
+\bibitem[WZ3]{WZ3} D. Wilczak and P. Zgliczy\'nski, \emph{Period doubling in the R\"ossler system - a computer assisted proof},
+ Foundations of Computational Mathematics, to appear.
+
+\bibitem[ZGi]{ZGi} P. Zgliczy\'nski and  M. Gidea, \emph{Covering relations for multidimensional
+     dynamical systems},  J.  Differential Equations, 202/1(2004), 33--58
+
+\bibitem[Z]{Z} P. Zgliczy\'nski, \emph{Computer assisted proof of
+chaos in the R\"ossler equations and the H\'enon map},  Nonlinearity {\bf 10}
+(1997), 243-252.
+
+\bibitem[Z1]{Z1} P. Zgliczy\'nski,  \emph{$C^1$-Lohner algorithm}, Foundations
+of Computational Mathematics, {\bf 2} (2002), 429--465.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,35 @@
+\section{Wstęp}
+
+Mamtematycy już od XVII wieku próbują rozwiązywąć różne równania różniczkowe.
+Czasami są wstanie wyprowadzić jawne wzory, jak na przykład dla równań liniowych jednak w większości
+przypadków się nie da.
+Często rozważają jedynie istnienie pewnych rodzajów rozwiązań np okresowych, heteroklicznych,
+homoklinicznych czy chaotycznych. Niestety dowody korzystające z metod klasycznych przeważnie mają bardzo 
+sztywne założenia co do prawej strony równania, często zakłada się że jest ono okresowe.
+
+Natomiast w wiele klasycznych równaniach różniczkowych, takich jak rówanie Lorenza, R\"{o}sslera czy Kuramoto-Sivashinskiego wykazuje 
+zachowanie chaotyczne w symulacjach komputerowych, których nie potrafimy wykazać analitycznie.
+W 1995 Mischaikow i Mrozek \cite{MM} udowodnili istnienie dynamiki chaotcznej 
+w rówaniach Lorenza. Praca w której ukazał się ten wynik została przez Encyklopedie Britannica uznana jedną z czterech najważniejszych 
+prac matematycznych w 1995 roku. Zgliczyński [cyt] wykazał istnienie dynamiki chaotycznej w równaniu R\"{o}sslera.
+Dla równania Kuramoto-Sivashinskiego istnieją dowody wspierane komputerowo istnienia 
+orbit heteroklinicznych,homoklinicznych[cyt]. O tym ostatnim równaniu napiszę więcej wreszcie pracy, dlatego nie przytaczam tutaj żadnych nazwisk.
+Wszystkie cytowane przeze dowody 
+były wspierane komputerowo.
+
+W tej pracy przedstawie pojęcie relacji nakrywających. Przytocze odpowiednie definicje. Na końcu wykaże, że istnieje $ \Sigma_2 $ chaosu w równaniu Kuramato-Sivashinskiego dla 
+pewnej wartości parametru. Będę korzystał z metod numerycznych zaimplementowanych w CAPD \cite{CAPD}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

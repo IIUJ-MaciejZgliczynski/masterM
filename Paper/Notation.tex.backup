@@ -1,0 +1,19 @@
+\title{Notacja}
+
+\section{Notacja}
+Przy ustalonej normie w $ \mathbb{R}^n $ poprzez $B_n(c,r)$ będziemy 
+oznaczali otwartą kule o promieniu $r$ i środku w $ c \in \mathbb{R}^n $.
+Jeżeli wymiar $n$ będzie jasny z kontektu to będziemy opuszczać indeks $n$.
+Niech  $S^n(c,r)=\partial B_{n+1}(c,r)$, poprzez $S^n$ będziemy oznaczać $S^n(0,1)$.
+Dla $n=0$ defniujemy odpowiednio $\mathbb{R}^0=\{0\}$, $B_0(0,r)=\{0\}$, $\partial B_0(0,r)=\emptyset$.
+
+
+Przy ustalonym $Z$, poprzez $\inte Z$ , $\overline{Z}$, $\partial Z$ 
+oznaczamy odpowiednio wnętrze, domknięcie i brzeg {\em h-setu} $Z$.
+Dla odwzorowania $h:[0,1]\times Z \to \mathbb{R}^n$ ustalamy  $h_t=h(t,\cdot)$.
+Poprzez $\mbox{Id}$ oznacamy odzworowanie identycznościowe. 
+Poprzez $f:X\oarrow Y$ ozaczamy odwzorwanie częściowe, czyli 
+odwzorowanie którego dziedziną niekoniecznie jest całe $X$. 
+Dla odwzorwanie $f:X\oarrow Y$, poprzez $\mbox{dom}(f)$ będziemy
+oznaczać dziedzine $f$. Dla $N \subset \Omega$, $N$-otwarty i $ c \in 
+\mathbb{R}^n$ .
