@@ -55,7 +55,7 @@ Lokalny stopień ma następujące własności.
 
   Wtedy 
   \begin{equation}
-      \forall \lambda \in [0,1] \quad deg(H_{\lambda},D,c) = def(H_0,D,c) 
+      \forall \lambda \in [0,1] \quad deg(H_{\lambda},D,c) = deg(H_0,D,c) 
   \end{equation}
   
   W szczególności jeżeli $ [0,1] \times \overline{D} \subset dom(H) $ i $ \overline{D} $ jest zwarty, wtedy warunk wynika z następującego warunku

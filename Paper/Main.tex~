@@ -60,11 +60,9 @@
 \input Application.tex
 \input MyStuff.tex
 
-
-
-\section{Twierdzenia}
-
 \section{Wyniki numeryczne}
+
+W tej cz
 
 \section{Kod}
 

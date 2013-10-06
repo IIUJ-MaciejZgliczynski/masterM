@@ -411,7 +411,7 @@ A więc w obu przypadkach otrzymujemy sprzeczność, czyli drugi warunek w twier
 \begin{definition}\label{def:orbitWithRespectTo}
 Załóżmy że $(N_i)_{i\in\mathbb Z}$ są h-setami w $\mathbb R^n$ i
 $f_i:|N_i|\to\mathbb R^n$ są odwzorwaniami ciągłymi. Mówimy że ciąg 
-$(x_i)_{i\in\mathbb Z}$ jest \emph{oełną orbitą w stosunku do }
+$(x_i)_{i\in\mathbb Z}$ jest \emph{pełną orbitą w stosunku do }
 $(f_i)_{i\in\mathbb Z}$ \emph{and} $(N_i)_{i\in\mathbb Z}$ jeżeli :
 %Assume $(N_i)_{i\in\mathbb Z}$ are h-sets in $\mathbb R^n$ and
 %$f_i:|N_i|\to\mathbb R^n$ are continuous. We say that a sequence

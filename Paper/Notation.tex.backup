@@ -16,4 +16,6 @@ Poprzez $f:X\oarrow Y$ ozaczamy odwzorwanie częściowe, czyli
 odwzorowanie którego dziedziną niekoniecznie jest całe $X$. 
 Dla odwzorwanie $f:X\oarrow Y$, poprzez $\mbox{dom}(f)$ będziemy
 oznaczać dziedzine $f$. Dla $N \subset \Omega$, $N$-otwarty i $ c \in 
-\mathbb{R}^n$ .
+\mathbb{R}^n$ . Poprzez $ det A $ gdzie $ A $ to macierz kwadratowa będziemy 
+oznaczać wyznacznik macierzy $ A $.
+Poprzez $ \pi_i $ będziemy oznaczali rzutowanie na {\em i-tą } współrzędną.

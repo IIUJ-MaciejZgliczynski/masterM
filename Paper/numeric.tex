@@ -68,14 +68,14 @@ Dlatego rosrszerzamy operacje dodwania, odejmowania i dzielenia ze zbioru liczb 
 reprezentowalnych.
 
 Niech $ A,B  \subset \overline {\mathbb R } $ będą pewnymi podzbiorami oraz niech $ \diamondsuit $ będzie jedną z operacji elementarnych,
- $ \diamondsuit \in \{+,-,\cdot,/ \}.$ Wtedy definujemy 
+ $ \diamondsuit \in \{+,-,\cdot,/ \}.$ Wtedy definiujemy 
  \begin{equation}
     A \diamondsuit B := \{ a \diamondsuit b | a \in A , b \in B  \}.
  \end{equation}
 
  Dodatkowo zakładamy, że przy dzieleniu $0 \notin B $. W sytuacji w której $ A,B \in \overline{ \mathbb I } $ operacje te sprowadzja 
  sie do odpowiednich obliczeń na końcach przedziałów, oraz sprawdzenia znaków liczb, będącymi końcami przedziałów $ A,B $.
- Wynik takiej operacji jest również przedziełem $ A \diamondsuit B \in \hat {\mathbb R } $ .
+ Wynik takiej operacji jest również przedziałem $ A \diamondsuit B \in \hat {\mathbb R } $ .
  Możemy próbować w ten sposób rozszerzyć podstawowe operacje na przedziały reprezentowalne. Oczywiście wynik takiej operacji
  niekoniecznie musi być przedziałem reprezentowalnym, dlatego opreacje elementerne na przedziałach reprezentowalnych musimy zdefiniować w
  następujący spsób 
@@ -88,12 +88,65 @@ Niech $ A,B  \subset \overline {\mathbb R } $ będą pewnymi podzbiorami oraz ni
     X \diamondsuit Y \subset \updownarrow(X) \hat{\diamondsuit} \updownarrow(Y)
  \end{equation}
  
- o ile prawa strone isntieje. 
- Operacje na końcach są standartowymi operacjami wykonywanymi sprzętowo. Dzięki temu cechują się one 
+ o ile prawa strona istnieje. 
+ Operacje na końcach są standardowymi operacjami wykonywanymi sprzętowo. Dzięki temu cechują się one 
  wysoką wydajnością. 
  
- W mojej pracy jak już wcześniej pisałem będę korzystał z arytmetyki przedziałowej i metod numerycznych zaimplementowanych w Instytucie Informatyki Uniwersytetu 
- Jagiellońskiego przez grupę badawczą CAPD \cite{CAPD}.
+ \section{Metoda Taylor'a rozwiązania numerycznego równań różniczkowych}
+ Rozważmy problem Cauchy'ego dla równania różniczkowego. Mianowicie :
+ \begin{eqnarray*}
+    \dot x & = & f(x,t) \\
+    x(0) & = & x_0
+ \end{eqnarray*}
+ Gdzie $ f(x,t) $ jest klasy $ C^{ \infty } $ i nie zależy od $ t $, czyli możemy pisać jedynie $ f(x) $.
+ Zgodnie z twierdzeniem Picarda o istnieniu i jednoznaczności rozwiązania problemu Cauchy'ego. Istnieje rozwiązanie tego problemu co więcej
+ na dowolnym obszarze na którym dwa rozwiązania są określone są one identyczne.
+ 
+ Zauważmy, że skoro wiemy, że odwzorowanie $ t \mapsto x(t) $ jest określone na jakimś obszarze i jego pochodna jest klasy $ C^{ \infty } $ to znaczy,
+ że możemy policzyć pochodne wyższego rzędu.
+\begin{eqnarray*}
+    x^{(1)} & = & f(x) \\
+    x^{(2)} & = & (x^{(1)})' = Df(x) \cdot f(x) \\
+    x^{(3)} & = & (x^{(2)})' = D^2f(x) (f(x),f(x)) + Df(x)(Df(x) \cdot f(x)) \\
+    x^{(n)} & = & (x^{(n-1)})' = \cdots
+\end{eqnarray*}
+
+Jak widzimy wzory da się wyprowadzić, komplikują się bardzo ale się da. Co więcej można zrobić to automatycznie. Wzory na $n$-tą pochodną zależą jedynie jedynie od 
+wyrazów wcześniej obliczonych i odpowiednich pochodnych $ f $. W układzie Michelsona który rozważamy w tej pracy 
+\begin{eqnarray*}
+  f((x_1,x_2,x_3)) & = & (x_2,x_3, c^2 - y - \frac{1}{2}x^2) \\
+  Df((x_1,x,_2,x_3)).h&  = &
+  \begin{bmatrix}
+    0 & 1 & 0 \\	
+    0 & 0 & 1 \\
+   -x_1 & -1 & 0 
+  \end{bmatrix}
+\end{eqnarray*}
+Pochodne $ f(x) $ od trzeciego rzędu zanikają. Druga pochodna w naszym przypadku to sa 3 formy dwuliniowe ( na każdą współrzędną ) gdzie
+łącznie tylko jedno pole jest niezerowe.
+Jak widzimy można policzyć pochodne dowolnego rzędu. Na komputerze jednak nie możemy sobie pozwolić na nieskończone rozwijanie
+w szereg Taylor'a ( nie koniecznie w ogóle by musiało się dać, istnieją funkcje klasy $ C^{\infty} $ których szereg Taylor'a jest istotnie inny).
+Możemy jednak ograniczyć się do pewnego z góry ustalonego stopnia pochodnych. Załóżmy, że funkcja $ u : A \subset \mathbb R \to R^n $ jest 
+naszym rozwiązaniem i znamy jej wartość w czasie $ a $ i chcemy obliczyć w czasie $ a + h $ rozwiniemy ją do drugiego stopnia
+
+\begin{eqnarray*}
+ u(t) = u(a) + u^{(1)}(a) \cdot t + \frac{1}{2!}u^{(2)}(a) \cdot t^2 + R_3(t) \\
+ u(t) = u(a) + f(u(a)) \cdot t + \frac{1}{2!} Df(u(a)) \cdot f(u(a)) + R_3(t) 
+\end{eqnarray*}
+
+Podobnie można rozwinąć dla wyższego rzędu. 
+Resztę Taylor'a można oszacować ze wzoru Langranga
+$$
+  R_k(t) = \frac{1}{(k+1)!}u^{(k+1)}(\epsilon) \cdot t^{k+1}
+$$
+
+Gdzie $ \epsilon $ należy do odcinka o końcach $ a $ i $ a+h$.
+Jak widzieliśmy, wszystkie pochodne $ u $ możemy wyliczyć z definicji pola wektorowego a więc możemy kontrolować
+dokładność z jaka obliczamy następne wartości naszej funkcji, czyli w dowolnym momencie obliczeń mamy pewność, że wartość
+którą staramy się obliczyć jest w pewnym przedziale.
+W mojej pracy jak już wcześniej pisałem będę korzystał z arytmetyki przedziałowej i metod numerycznych zaimplementowanych w Instytucie Informatyki Uniwersytetu 
+ Jagiellońskiego przez grupę badawczą CAPD \cite{CAPD}, wraz z twierdzeniami na temat relacji nakrywających dają nam znakomite narzędzia do 
+ badania zachowań równań i dowodzenia chaotycznego zachowan
 
  
 

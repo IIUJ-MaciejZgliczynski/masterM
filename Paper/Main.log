@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.11.21)  5 OCT 2013 17:43
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.11.21)  6 OCT 2013 16:59
 entering extended mode
  %&-line parsing enabled.
 **Main.tex
@@ -431,9 +431,9 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
 LaTeX Font Info:    ... okay on input line 50.
 
 (./Introduction.tex
-Overfull \hbox (20.68848pt too wide) in paragraph at lines 10--18
-\T1/cmr/m/n/10 wody wspie-rane kom-pu-te-rowo ist-nie-nia or-bit he-te-ro-kli-n
-icz-nych,homoklinicznych[cyt].
+Overfull \hbox (30.96375pt too wide) in paragraph at lines 10--18
+\T1/cmr/m/n/10 do-wody wspie-rane kom-pu-te-rowo ist-nie-nia or-bit he-te-ro-kl
+i-nicz-nych,homoklinicznych[cyt].
  []
 
 LaTeX Font Info:    Try loading font information for U+msa on input line 19.
@@ -463,7 +463,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
 [3]
 File: cover.eps Graphic file (type eps)
  <cover.eps> [4] [5] [6] [7]
-Overfull \hbox (21.3434pt too wide) in paragraph at lines 341--353
+Overfull \hbox (21.3434pt too wide) in paragraph at lines 340--352
 \T1/cmr/m/n/10 maj¡ co-najm-niej je-den punkt wspólny a wi¦c ist-nieje ta-kie $
 \OML/cmm/m/it/10 t[] \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 [\OMS/cmsy/m/n/10 ^^@\O
 T1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1]$ \T1/cmr/m/n/10 , $\OML/cm
@@ -473,15 +473,19 @@ m/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 b[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/
  []
 
 [8]
-Overfull \hbox (14.6387pt too wide) in paragraph at lines 430--436
+Overfull \hbox (14.6387pt too wide) in paragraph at lines 429--435
 \T1/cmr/m/it/10 Wtedy mó-wimy, »e $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]: [] ; 
 x[]\OT1/cmr/m/n/10 )$ \T1/cmr/m/it/10 jest \T1/cmr/m/n/10 okre-sow¡ or-bit¡ \T1
 /cmr/m/it/10 w sto-sunku do $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f[]; [] ; f[]\OT
 1/cmr/m/n/10 )$
  []
 
-[9]) (./Dynamics.tex [10] [11] [12] [13] [14]) (./numeric.tex [15] [16])
-(./Application.tex [17] [18]) (./MyStuff.tex [19]
+[9]) (./Dynamics.tex [10] [11] [12] [13] [14]) (./numeric.tex [15] [16]
+Overfull \hbox (12.95462pt too wide) in paragraph at lines 95--95
+[]\T1/cmr/bx/n/14.4 Metoda Tay-lor'a roz-wi¡-za-nia nu-me-rycz-nego rów-
+ []
+
+[17]) (./Application.tex [18] [19]) (./MyStuff.tex [20] [21]
 Overfull \hbox (107.63466pt too wide) in paragraph at lines 93--94
 []$\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 = (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 
 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 88930181632132043745)$ $\OML/cmm/m/it/10 u[]
@@ -500,7 +504,7 @@ y/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0900000000000000
 10547)$
  []
 
-[20]
+
 Overfull \hbox (102.63464pt too wide) in paragraph at lines 95--96
 []$\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 = (0\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10
  ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 21856378422848130039)$ $
@@ -529,588 +533,19 @@ it/10 u[] \OT1/cmr/m/n/10 = (\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it
 @\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 057865711545585452047)$
  []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.129 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Display math should end with $$.
-<to be read again> 
-                   \par 
-l.129 
-      
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.130   p(x) = (i_
-                  j) j \in \mathbb Z \Leftrightarrow P^{4j}(x) \in |N_{i_j},...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.132 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Undefined control sequence.
-l.135   p(P^4(x)) = \sgima
-                          (p(x))
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-LaTeX Warning: Reference `num:cover' on page 21 undefined on input line 138.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.140 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.140 
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.140 
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.140 
-      
-I'm guessing that you meant to end an alignment here.
-
-! Missing { inserted.
-<inserted text> 
-                {
-l.140 
-      
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.140 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $$ inserted.
-<to be read again> 
-                   \par 
-l.140 
-      
-Displays can use special alignments (like \eqalignno)
-only if nothing but the alignment itself is between $$'s.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.142   N_
-          2 \cover{P} N_1 \cover{P} N_2 \cover{P} N_1 \cover{P} N_5 \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Misplaced alignment tab character &.
-\reserved@a ->&
-                & &
-l.143 
-      
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced alignment tab character &.
-\reserved@a ->& &
-                  &
-l.143 
-      
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced alignment tab character &.
-\reserved@a ->& & &
-                   
-l.143 
-      
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced \cr.
-\@@eqncr ...l \@eqnswtrue \global \@eqcnt \z@ \cr 
-                                                  
-l.143 
-      
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced \noalign.
-\@xeqncr [#1]->\ifnum 0=`{\fi }\@@eqncr \noalign 
-                                                 {\penalty \@eqpen \vskip \j...
-l.143 
-      
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.143 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.143 
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Extra }, or forgotten \endgroup.
-\@xeqncr ... \@eqpen \vskip \jot \vskip #1\relax }
-                                                  
-l.143 
-      
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.144   N_
-          2 \cover{P} N_1 \cover{P} N_2 \cover{P} N_1 \cover{P} N_2 \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Misplaced alignment tab character &.
-\reserved@a ->&
-                & &
-l.145 
-      
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced alignment tab character &.
-\reserved@a ->& &
-                  &
-l.145 
-      
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced alignment tab character &.
-\reserved@a ->& & &
-                   
-l.145 
-      
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced \cr.
-\@@eqncr ...l \@eqnswtrue \global \@eqcnt \z@ \cr 
-                                                  
-l.145 
-      
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced \noalign.
-\@xeqncr [#1]->\ifnum 0=`{\fi }\@@eqncr \noalign 
-                                                 {\penalty \@eqpen \vskip \j...
-l.145 
-      
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.145 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.145 
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Extra }, or forgotten \endgroup.
-\@xeqncr ... \@eqpen \vskip \jot \vskip #1\relax }
-                                                  
-l.145 
-      
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.146   N_
-          5 \cover{P} N_3 \cover{P} N_4 \cover{P} N_1 \cover{P} N_2 \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Misplaced alignment tab character &.
-\reserved@a ->&
-                & &
-l.147 
-      
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced alignment tab character &.
-\reserved@a ->& &
-                  &
-l.147 
-      
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced alignment tab character &.
-\reserved@a ->& & &
-                   
-l.147 
-      
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced \cr.
-\@@eqncr ...l \@eqnswtrue \global \@eqcnt \z@ \cr 
-                                                  
-l.147 
-      
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced \noalign.
-\@xeqncr [#1]->\ifnum 0=`{\fi }\@@eqncr \noalign 
-                                                 {\penalty \@eqpen \vskip \j...
-l.147 
-      
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.147 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.147 
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Extra }, or forgotten \endgroup.
-\@xeqncr ... \@eqpen \vskip \jot \vskip #1\relax }
-                                                  
-l.147 
-      
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.148   N_
-          5 \cover{P} N_3 \cover{P} N_4 \cover{P} N_2 \cover{P} N_5 \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Misplaced alignment tab character &.
-\reserved@a ->&
-                & &
-l.149   \end
-            {eqnarray}
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced alignment tab character &.
-\reserved@a ->& &
-                  &
-l.149   \end
-            {eqnarray}
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced alignment tab character &.
-\reserved@a ->& & &
-                   
-l.149   \end
-            {eqnarray}
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced \cr.
-\@@eqncr ...l \@eqnswtrue \global \@eqcnt \z@ \cr 
-                                                  
-l.149   \end
-            {eqnarray}
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced \noalign.
-\@xeqncr [#1]->\ifnum 0=`{\fi }\@@eqncr \noalign 
-                                                 {\penalty \@eqpen \vskip \j...
-l.149   \end
-            {eqnarray}
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.149   \end
-            {eqnarray}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.149   \end
-            {eqnarray}
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Extra }, or forgotten \endgroup.
-\@xeqncr ... \@eqpen \vskip \jot \vskip #1\relax }
-                                                  
-l.149   \end
-            {eqnarray}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Misplaced alignment tab character &.
-\reserved@a ->&
-                & &
-l.149   \end{eqnarray}
-                      
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced alignment tab character &.
-\reserved@a ->& &
-                  &
-l.149   \end{eqnarray}
-                      
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced alignment tab character &.
-\reserved@a ->& & &
-                   
-l.149   \end{eqnarray}
-                      
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced \cr.
-\@@eqncr ...l \@eqnswtrue \global \@eqcnt \z@ \cr 
-                                                  
-l.149   \end{eqnarray}
-                      
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Extra }, or forgotten \endgroup.
-\endeqnarray ->\@@eqncr \egroup 
-                                \global \advance \c@equation \m@ne $$\@ignor...
-l.149   \end{eqnarray}
-                      
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.149   \end{eqnarray}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.149   \end{eqnarray}
-                      
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-[21]
-! Undefined control sequence.
-l.160 ...$ jest okresowy, to isntieje punkt w $ \p
-                                                  ^{-1} $ ktÃ³ry jest okresowy.
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-)
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 82.
+[22])
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 78.
  (/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [22] [23] [24]
-(./Main.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+) [23] [24] [25]
+(./Main.aux) ) 
 Here is how much of TeX's memory you used:
- 2655 strings out of 493849
- 30721 string characters out of 1152845
- 91569 words of memory out of 3000000
- 5849 multiletter control sequences out of 15000+50000
+ 2654 strings out of 493849
+ 30710 string characters out of 1152845
+ 92569 words of memory out of 3000000
+ 5848 multiletter control sequences out of 15000+50000
  13259 words of font info for 33 fonts, out of 3000000 for 9000
  719 hyphenation exceptions out of 8191
- 41i,9n,24p,287b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,12n,24p,289b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Main.dvi (24 pages, 92964 bytes).
+Output written on Main.dvi (25 pages, 97860 bytes).
