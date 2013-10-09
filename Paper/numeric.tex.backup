@@ -1,18 +1,18 @@
 \title{Numeryka}
 
 \section{Arytmetyka Przedziałowa}
-W tym rozdziale chciałbym przedstwiać techniczne podstawy dowodów komputerowo wspieranych
-w dynamice. W jak spsób korzystając z arytmetyki liczb wymiernych o skończonym rozwinięciu
-jesteśmy wstanie udowdnić twierdzenia dotyczące elementów z przestrzeni $ \mathbb R^n$ 
+W tym rozdziale chciałbym przedstawiać techniczne podstawy dowodów komputerowo wspieranych
+w dynamice. W jak sposób korzystając z arytmetyki liczb wymiernych o skończonym rozwinięciu
+jesteśmy wstanie udowodnić twierdzenia dotyczące elementów z przestrzeni $ \mathbb R^n$ 
 
 \subsection{Liczby reprezentowalne}
 
-W obliczeniach przeprowadzonych na komputerzez przeważnie korzysta się z liczb zmiennoprzecinkowych typu double 
-zgodnych ze standarder IEEE 754. Standard ten jest zaimplementowany w 
-wielu procesorach, w sczególnosci w komputerach typu PC.
-Opisuję on między innymi sposby zaokrąglania liczb czy zachowanie w przypadku dzielenia przez zero.
-  Każda liczba typu double jest zakodowana jako 64-bitowy ciąg, w którym 54 młodsze bity kodują mantyse (ozn. $m$) a kolejne
-11 bitów koduje wykładnik(ozn. $w$), natomiast najstarszy bit jest bitem znaku (ozn. z). Wtedy wartość tak zakodowanej liczby typu
+W obliczeniach przeprowadzonych na komputerze przeważnie korzysta się z liczb zmiennoprzecinkowych typu double 
+zgodnych ze standardem IEEE 754. Standard ten jest zaimplementowany w 
+wielu procesorach, w szczególności w komputerach typu PC.
+Opisuję on między innymi sposób zaokrąglania liczb czy zachowanie w przypadku dzielenia przez zero.
+  Każda liczba typu double jest zakodowana jako 64-bitowy ciąg, w którym 54 młodsze bity kodują mantyse (oznaczaną $m$) a kolejne
+11 bitów koduje wykładnik(oznaczaną $w$), natomiast najstarszy bit jest bitem znaku (oznaczaną z). Wtedy wartość tak zakodowanej liczby typu
 double wyliczamy z następującego wzoru :
 
 \begin{equation}\label{eq:kodowanie}
@@ -64,7 +64,7 @@ Dla podzbioru $ A \subset \mathbb R $
 Obliczenia na komputerach są jak już wcześniej wspominałem wykonywane najczęściej na liczbach typu $ double $.
 Oczywiście wynik operacji dwóch liczb reprezentowalnych wcale nie musi być liczbą reprezentowalną.
 Jednak chcielibyśmy wykonywać obliczenia ścisłe i by wyniki operacji były wiarygodne i o ile to możliwe precyzyjne.
-Dlatego rosrszerzamy operacje dodwania, odejmowania i dzielenia ze zbioru liczb rzeczywistych na rodzine przedziałów 
+Dlatego rozszerzamy operacje dodawania, odejmowania i dzielenia ze zbioru liczb rzeczywistych na rodzinę przedziałów 
 reprezentowalnych.
 
 Niech $ A,B  \subset \overline {\mathbb R } $ będą pewnymi podzbiorami oraz niech $ \diamondsuit $ będzie jedną z operacji elementarnych,
@@ -141,12 +141,38 @@ $$
 $$
 
 Gdzie $ \epsilon $ należy do odcinka o końcach $ a $ i $ a+h$.
-Jak widzieliśmy, wszystkie pochodne $ u $ możemy wyliczyć z definicji pola wektorowego a więc możemy kontrolować
-dokładność z jaka obliczamy następne wartości naszej funkcji, czyli w dowolnym momencie obliczeń mamy pewność, że wartość
-którą staramy się obliczyć jest w pewnym przedziale.
-W mojej pracy jak już wcześniej pisałem będę korzystał z arytmetyki przedziałowej i metod numerycznych zaimplementowanych w Instytucie Informatyki Uniwersytetu 
- Jagiellońskiego przez grupę badawczą CAPD \cite{CAPD}, wraz z twierdzeniami na temat relacji nakrywających dają nam znakomite narzędzia do 
- badania zachowań równań i dowodzenie
+Jak widzieliśmy, wszystkie pochodne $ u $ możemy wyliczyć z definicji pola wektorowego. 
+Żeby uprawiać ścisłe obliczenia numeryczne potrzebujemy mieć dokładne oszacowanie na resztę we wzorze Taylor'a. W równaniu różniczkowym 
+zwyczajnym pochodna będzie się wyrażała poprzez położenie naszego rozwiązania. Czyli zanim obliczymy wartość naszej funkcji w danym punkcie
+musimy mieć oszacowanie na wartości w pewnym otoczeniu. 
+Każde rozwiązanie problemu Cauchy'ego zdefiniowanego wyżej spełnia następującą równość
+\begin{equation}
+\label{diffEq}
+  x(t) = x(0) + \int\limits^t_0 f(x(s)) \,ds
+\end{equation}
+
+Załóżmy, że mamy $ U \subset \mathbb R^n $ otoczenie $ x(0) $, i $ f(x) \leq M \text{ dla każdego } x \in U $. 
+Oszacujmy jaki duży czasowy możemy zrobić by mieć pewność, że dalej pozostaniemy w zbiorze $ U $. 
+Niech $ d := dist(x, \mathbb R^n \ U ) $.
+
+Wtedy szacując \ref{diffEq} otrzymujemy :
+\begin{eqnarray*}
+  | x(t) - x(0) | & = &|\int\limits^t_0 f(x(s)) \,ds | \leq \int\limits^t_0 |f(x(s))| \,ds \\
+		  & \leq & \int\limits^t_0 M \,ds = |t| \cdot M
+\end{eqnarray*}
+A chcemy mieć pewność, że $ x(t) \in U $ a więc wystarczy, do tego wystarczy by $ | x(t) - x(0) | \leq d $, czyli
+każdy krok czasowy który będzie spełniał nierówność $ |t| < \frac{d}{M} $ będzie nam gwarantował, że nie wyjdziemy 
+z danego otoczenia.
+Znalezienie takiego otoczenia, bądź oszacowania nie zawsze musi się udać albo oszacowanie może być bardzo zgrubne. Przez 
+co krok czasowy jaki będziemy mogli wziąć będzie coraz mniejszy. Pamiętajmy, że przy ścisłych obliczeniach na przedziałach
+zbiór w którym może znajdować się nasze rozwiązanie będzie ciągle się powiększał co istotnie utrudnia wykonanie wcześniej wymienionych 
+czynności
+\newline
+Przytoczyłem tutaj czytelnikowi z grubsza metodę Taylor'a by uzmysłowić jak trudnym zagadnieniem są ścisłe obliczenia w dynamice
+i jak wiele zostało już wykonane za mnie. By przeprowadzić swoje eksperymenty numeryczne korzystałem z arytmetyki 
+przedziałowej i metod numerycznych zaimplementowanych w Instytucie Informatyki Uniwersytetu Jagiellońskiego przez 
+grupę badawczą CAPD \cite{CAPD}, wraz z twierdzeniami na temat relacji nakrywających dają nam znakomite narzędzia do 
+badania zachowań równań i dowodzenia chaotycznego zachowań.
 
  
 

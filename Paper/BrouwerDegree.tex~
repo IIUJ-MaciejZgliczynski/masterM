@@ -3,12 +3,12 @@
 \section{Lokalny stopień Brouwera}
 
 W definicji relacji nakrywającej kluczowym pojęciem jest lokalny stopień Brouwera.
-W tej pracy bedę korzystał z niego jedynie dla przestrzeni $ \mathbb R^n $ 
-przytocze jednak bardziej ogólną definicje
+W tej pracy będę korzystał z niego jedynie dla przestrzeni $ \mathbb R^n $ 
+przytoczę jednak bardziej ogólną definicje
 
 \begin{definition} {Lokalny Stopień Brouwera.}
-  Niech $X$ będzie skończenie wymiarową unormowaną przestrzenią weketorową i $ D $ będzie otwartym, ograniczonym podzbiorem $ X $.
-  Niech $ f : \overline D \to X $ będzie odzorowaniem klasy $ C^1 $ i niech $c$ będzie wartością regularną tego odzorowowanie. 
+  Niech $X$ będzie skończenie wymiarową unormowaną przestrzenią wektorową i $ D $ będzie otwartym, ograniczonym podzbiorem $ X $.
+  Niech $ f : \overline D \to X $ będzie odwzorowaniem klasy $ C^1 $ i niech $c$ będzie wartością regularną tego odwzorowania. 
   
   \begin{equation}
     f(x) \neq c  \quad \forall x \in \partial D 
@@ -27,7 +27,7 @@ to definiujemy lokalny stopień Brouwera jako :
     \end{equation}
     Gdzie $h$ jest funkcją klasy $ C^1 $ dostatecznie blisko $f$ , spełniającą warunek na brzegu i $ c $ jest jej wartością regularną.
     
-    Dla $ f $ jedynie spełniającego warunek nieosiągalności na brzegu definiuejemy lokalny stopień Brouwera jako stopień 
+    Dla $ f $ jedynie spełniającego warunek nieosiągalności na brzegu definiujemy lokalny stopień Brouwera jako stopień 
     dowolnej funkcji klasy $ C^1 $, która spełnia warunek na brzegu i jest dostatecznie blisko f.
   
 
@@ -40,15 +40,12 @@ Lokalny stopień ma następujące własności.
 \begin{enumerate}
  \item Własność rozwiązania \newline
    \begin{equation}
-   \mbox{Jeżeli  }  deg(f,D,c) \neq 0  \mbox{ Wtedy istnieje } x \in D  \mbox{takie, że }  f(x) = c 
+   \mbox{Jeżeli  }  deg(f,D,c) \neq 0  \mbox{ Wtedy istnieje } x \in D  \mbox{ takie, że }  f(x) = c 
    \end{equation}
    
-  \item Własność homotopi.  \newline
+  \item Własność homotopii  \newline
   Niech $ H : [0,1] \times D \to \mathbb R^n $ będzie odwzorowaniem ciągłym i 
-  %\begin{equation} \label{eq:homotopy}
-  %
-  %    \bigcup_{\lambda \in [0,1] } H^{-1}_{ \lambda }(c) \cap  \mbox{ jest zbiorem zwartym}
-  % \end{equation}
+  
   \begin{equation} \label{eq:homotopy}
     \bigcup_{\lambda \in [0,1] } H^{-1}_{\lambda }(c) \cap D \mbox{ jest zbiorem zwartym }
   \end{equation}
@@ -63,23 +60,23 @@ Lokalny stopień ma następujące własności.
     c \notin H([0,1], \partial{D})
   \end{equation}
   
-  \item Lokalny stopień jesst funckcją lokalnie stałą \newline
-    Załóżmy, że $ D $ jest otwarty i ograczniczony. Niech $p $ i $ q $ należą do tej samej spójnej składowej $ \mathbb R^n  \setminus f(\partial{D}) $  wtedy
+  \item Lokalny stopień jest funkcją lokalnie stałą \newline
+    Załóżmy, że $ D $ jest otwarty i ograniczony. Niech $p $ i $ q $ należą do tej samej spójnej składowej $ \mathbb R^n  \setminus f(\partial{D}) $  wtedy
     \begin{equation} \label{eq:locallity}
       deg(f,D,p) = deg(f,D,q)
     \end{equation}
   
   \item Własność wycinania. \newline
-    Załóżmy, żę $ E \subset D $, $ E $ otwarty i 
+    Załóżmy, że $ E \subset D $, $ E $ otwarty i 
     \begin{equation}
-	f{-1}(c) \cap D \subset E 
+	f^{-1}(c) \cap D \subset E 
     \end{equation}
     Wtedy
     \begin{equation}
         deg(f,E,c) = deg(f,D,c)
     \end{equation}
     
-    \item Loklany stopień dla izomorfizmów afinicznych \newline
+    \item Lokalny stopień dla izomorfizmów afinicznych \newline
     Załóżmy, że $ f(x) = A(x-x_0) + c $, gdzie $ A $ jest izomorfizmem liniowym i $ x_0,c \in \mathbb R^n $. 
     Jeżeli $ x_0 \in D$ wtedy
     \begin{equation}
@@ -88,7 +85,7 @@ Lokalny stopień ma następujące własności.
     
     \item Własność produktu. \newline
      Niech $ U_i \subset \mathbb R^{n_i}, f_i : U_i  \to \mathbb R^{n_i} $ dla $ i =1,2 $
-     Wtedy odwzorowanie $ (f_1,f_2) : U_1 \times U_2 \to R^{n_1} \times R^{n_2} $ dane wzorem :
+     Wtedy definiujemy odwzorowanie $ (f_1,f_2) : U_1 \times U_2 \to R^{n_1} \times R^{n_2} $ następującym wzorem :
      $ (f_1,f_2)(x_1,x_2) = (f_1(x_1),f_2(x_2)) $. Wtedy dla $c_1 \in R^{n_1}  $ i $ c_2 \in R^{n_2} $ takich, że $ deg(f_1,U_1,c_1),deg(f_2,U_2,c_2) $ są zdefiniowane 
      zachodzi następująca równość 
      \begin{equation}
@@ -99,26 +96,17 @@ Lokalny stopień ma następujące własności.
      Niech $ D \subset \mathbb R^n $ będzie otwarty i ograniczony. Niech $ f : D \to R^n , g : \mathbb R^n \to \mathbb R^n $ są ciągłe i niech $ \Delta_i $ ozanczają 
      ograniczone spójne składowe $ \mathbb R^n \setminus f(\partial{D}$. Wtedy 
      \begin{equation}
-	  deg (g \circ f ,D,p) = \Sigma_{\Delta_i} deg(g,\Delta_i,p)deg(f,D,\Delta_i) 
+	  deg (g \circ f ,D,p) = \Sigma_{\Delta_i} deg(g,\Delta_i,p) \cdot deg(f,D,\Delta_i) 
      \end{equation}
      
-     Gdzie $ deg(f,D,\Delta_i) := deg(f,D,q_i)$ dla jakiegoś $ q_i in \Delta_i $. Z własności \ref{eq:locallity} wynika, że defnicja $ def(f,D,\Delta_i ) $ nie zależy od wyboru
+     Gdzie $ deg(f,D,\Delta_i) := deg(f,D,q_i)$ dla jakiegoś $ q_i in \Delta_i $. Z własności \ref{eq:locallity} wynika, że definicja $ def(f,D,\Delta_i ) $ nie zależy od wyboru
      $ q_i \in \Delta_i $
      
-     \item Własnośc dodwania. \newline
+     \item Własność dodawania. \newline
      Niech $ D = \bigcup_{i \in I} D_i $ , gdzie $ I = \{1,2 \dots n \} $ dla jakiegoś $ n \in \mathbb N $ i $ D_i $ są zbiorami otwartymi parami rozłącznymi takimi, żę 
      $ \partial{D_i} \subset \partial{D} $ dla każdego $ i \in I $. Wtedy dla każdego $ c \notin f(\partial{D})  $ zachodzi:
      \begin{equation}
 	deg(f,D,c) = \Sigma_{i \in I} deg(f,D_i,c)
      \end{equation}
-     
-
-
-
-
-
-
-
-
 \end{enumerate}
 

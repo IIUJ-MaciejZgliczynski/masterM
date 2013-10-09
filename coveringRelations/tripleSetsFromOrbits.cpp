@@ -126,7 +126,7 @@ void createTripleSetsFromOrbitPoints(double scale = 0.1){
 
 
 
-int main(){
+int main(int argc, char ** argv){
 	cout.precision(20);
 	createTripleSetsFromOrbitPoints(0.2);
 	//capd::covrel::TripleSet tset = getTripleSet("2_0");

@@ -2,15 +2,15 @@
 #define IMICHELSONPOINCAREMAP
 
 #include "capd/capdlib.h"
-#include "capd/poincare/PoincareMapJet.h"
+#include "capd/poincare/PoincareMap.hpp"
 #include "higherorderfunction.hpp"
 #include <capd/covrel/TripleSet.h>
 #include <capd/covrel/GridSet.h>
 #include "vectorconversion.hpp"
 
+using namespace capd;
+typedef capd::poincare::PoincareMap<ITaylor> PoincareMap;
 
-
-typedef capd::poincare::PoincareMapJet<ITaylor> PoincareMap;
 class IMichelsonPoincareMap{
  public :
 	IFunction section;
@@ -21,7 +21,7 @@ class IMichelsonPoincareMap{
 	IMichelsonPoincareMap(int order , double step, double c) : 
 		section("var:x,y,z;fun:z;"),
 		vectorField("par:c;var:x,y,z;fun:y,z,c^2-y-0.5*x*x;"),
-		solver(vectorField,order,step),
+		solver(vectorField,order),
 		pm(solver,section)
 	{
 		vectorField.setParameter("c", c);
@@ -56,11 +56,11 @@ class IMichelsonPoincareMap{
     x[2] = 0.0;
 
     // for computing of derivative of PM we need an instance of logarithmic norm
-    IEuclLNorm N;
+    
 
     // We define a doubleton representation of the set and its derivative
     // constructor sets initial condition for variational equation to Identity
-    C1Rect2Set s(x,N);
+    C1Rect2Set s(x);
 
     // the matrix monodromyMatrix will store derivatives of the FLOW not Poincare map
     IMatrix monodromyMatrix(3,3);

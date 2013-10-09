@@ -3,7 +3,7 @@
 
 #include <stdexcept>
 #include "capd/poincare/PoincareMap.hpp"
-#include "capd/poincare/BasicPoincareMapJet.hpp"
+#include "capd/poincare/BasicPoincareMap.hpp"
 #include "capd/capdlib.h"
 #include "capd/krak/krak.h"
 #include <iostream>
@@ -18,7 +18,7 @@ class DMichelsonPoincareMap{
 	DMichelsonPoincareMap(int order , double step, double c) : 
 		section("var:x,y,z;fun:z;"),
 		vectorField("par:c;var:x,y,z;fun:y,z,c^2-y-0.5*x*x;"),
-		solver(vectorField,order,step),
+		solver(vectorField,order),
 		pm(solver,section)
 	{
 		vectorField.setParameter("c", c);

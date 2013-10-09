@@ -315,8 +315,6 @@ int main(int argc , char * argv[]){
     initGraphics();
    try
    {
-		
-		
 		vector<TripleSet> ts;
 		
 		capd::covrel::TripleSet t4_3 = getTripleSet("4_3");

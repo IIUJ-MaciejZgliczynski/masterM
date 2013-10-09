@@ -40,7 +40,7 @@ N_c^+=\overline{B_{u(N)}}(0,1) \times
 \end{eqnarray*}
 \end{definition}
 
-Więc {\em h-set }  $N$, jest iloczynem kartezjańskim dwóch domkniętych kul w jakimś
+Reasumując {\em h-set }  $N$ jest iloczynem kartezjańskim dwóch domkniętych kul w jakimś
 układzie współrzędnych. Liczby $u(N)$ i $s(N)$ to wymiary odpowiednio nominalnie niestabilnego
 i stabilnego kierunku. Indeks $c$ odpowiada nowemu układowi współrzędnych zadanego poprzez homeomorfizm
 $c_N$. Zauważmy, że jeżeli $u(N) = 0$ wtedy $N^-=\emptyset$ a jeżeli $s(N)=0$, wtedy $N^+=\emptyset$.
@@ -50,7 +50,7 @@ przy oznaczeniu suportu h-setu $N$. Czyli $N$ będzie oznaczało zarówno h-set 
 \subsection{Relacje nakrywające}
 \begin{definition} \cite{ZGi}
 \label{def:covw} 
-Załóżmy że $N,M$ są {\em h-setami } , takimi że: $u(N)=u(M)=u > 0$ i $(s(N)=S(M)=s$.
+Załóżmy że $N,M$ są {\em h-setami}, takimi że: $u(N)=u(M)=u > 0$ i $(s(N)=S(M)=s$.
 Niech $f:N \to {\mathbb R}^n$ będzie odwzorowaniem ciągłym. 
 Definiujemy $f_c = c_M \circ f \circ c_N^{-1}: N_c \to {\mathbb R}^u \times {\mathbb R}^s $.
 Niech $w$ będzie niezerową liczbą całkowitą. 
@@ -84,10 +84,10 @@ Mówimy, że
 \end{description}
 \end{definition}
 
-Intuicyjnie, $N \cover{f} N$ jeżeli $f$ rozciąga $N$ w 
-'nominalnie niestabilnym' kierunku , w taki sposób , że jego rzut na 
-'nominalnie niestabilny' kierunek w $M$ pokrywa w topologicznie nietrywialny sposób rzut $M$
-W 'nominalnie stabilnym' kierunku $N$ jest zwężane przez $f$. W rezultacie $N$ jest odzoworwane
+Intuicyjnie nasz definicja mówi, że $N \cover{f} N$ jeżeli $f$ rozciąga $N$ w kierunku
+'nominalnie niestabilnym', w taki sposób, że jego rzut na 
+'nominalnie niestabilny' kierunek w $M$ pokrywa w topologicznie nietrywialny sposób rzut $M$.
+W 'nominalnie stabilnym' kierunku $N$ jest zwężane przez $f$. W rezultacie $N$ jest odwzorowane
 poprzez $M$ w kierunku niestabilnym bez dotykania $M^+$. 
 Warto zauważyć również że stopień $w$ w relacji nakrywającej zależy jedynie
 od $A_{|\partial B_u(0,1)}$
@@ -105,7 +105,7 @@ Rysunku .~\ref{fig:cover}.
 
 \begin{definition}\label{def:horizontalDisk}
 Niech $N$ będzie $h-set$em. Niech $ b:\overline{B_{u(N)}}(0,1) \to |N| $
-będzie odwzorowanie i zdefnijmy $b_c = c_N \circ b$. Odwzorowanie b nazywamy dyskiem poziomym w N jeżeli istnieje ciągła homotopia $ h: [0,1] \times \overline{B_{u(N)}}(0,1) \to
+będzie odwzorowanie i zdefiniujmy $b_c = c_N \circ b$. Odwzorowanie b nazywamy dyskiem poziomym w N jeżeli istnieje ciągła homotopia $ h: [0,1] \times \overline{B_{u(N)}}(0,1) \to
 N_c $ taka, że :
 	
 \begin{eqnarray*}
@@ -116,8 +116,8 @@ N_c $ taka, że :
 \end{definition}
 
 \begin{definition}\label{def:verticalDisk}
-Załóżmy, że $N$ będzie $h-set$em. Niech $ b:\overline{B_{s(N)}}(0,1) \to |N| $
-będzie odwzorowanie i zdefnijmy $b_c = c_N \circ b$. Odwzorowanie b nazywamy dyskiem pionowym w N jeżeli istnieje ciągła homotopia $ h: [0,1] \times \overline{B_{s(N)}}(0,1) \to
+Załóżmy, że $N$ będzie {\em h-setem}. Niech $ b:\overline{B_{s(N)}}(0,1) \to |N| $
+będzie odwzorowanie i zdefiniujmy $b_c = c_N \circ b$. Odwzorowanie b nazywamy dyskiem pionowym w N jeżeli istnieje ciągła homotopia $ h: [0,1] \times \overline{B_{s(N)}}(0,1) \to
 N_c $ taka, że :
 	
 \begin{eqnarray*}
@@ -127,7 +127,7 @@ N_c $ taka, że :
 \end{eqnarray*}
 \end{definition}
 
-Zauważmy, że dysk poziomy w $N$ może również być dyskiem pionwym w $N$. Przykład :
+Zauważmy, że dysk poziomy w $N$ może również być dyskiem pionowym w $N$. Przykład :
 // tutaj obrazek
 
 \begin{theorem}
@@ -147,7 +147,7 @@ Zauważmy, że dysk poziomy w $N$ może również być dyskiem pionwym w $N$. Pr
 \end{theorem}
 
 Rozważmy szczególny przypadek tego twierdzenia. Mianowicie kiedy nasze $h-sety$ leżą na
-płasczyźnie i $u(N_i) = s(N_i) =1 $ dla $ i=0, \dots k $. Wtedy dowód staję się bardzo
+płaszczyźnie i $u(N_i) = s(N_i) =1 $ dla $ i=0, \dots k $. Wtedy dowód staję się bardzo
 prosty i chciałbym go tutaj przytoczyć. Zanim jednak przejde do dowodu tego twierdzenia musze przytoczyć pewien potrzebny lemat.
 
 \begin{lemma}
@@ -228,11 +228,6 @@ prosty i chciałbym go tutaj przytoczyć. Zanim jednak przejde do dowodu tego tw
   $ deg (f,D,0) = deg(H_0,D,0) = deg(H_1,D,0) = deg(Id,D,0) = 1 $ 
   a więc z własności istnienia rozwiązania istnieje $ x = (x_1,x_2) \in B_2 $, takie , że $f(x) = 0 $ czyli 
   $ h_c(x_1) = g_c(x_2) $ czyli dyski $h,g$ się przecinają.
-  
-
-
-
-
 
 \begin{theorem}
 	Niech będzie $k \geq 1 $. Załóżmy , że $N_i, i = 0, \dots ,k $ są h-setami

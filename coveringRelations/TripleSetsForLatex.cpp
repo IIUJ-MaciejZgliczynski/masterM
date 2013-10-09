@@ -59,7 +59,7 @@ class Formatter
 	}
 };
 
-int main()
+int main(int argc, char ** argv)
 {
 	cout.precision(precision);
 	Formatter formater;

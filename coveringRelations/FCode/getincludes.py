@@ -1,0 +1,53 @@
+#!/usr/bin/env python
+
+import os
+import re
+
+def getIncludeFile(line):
+    m = re.search('^ *#include +"([a-zA-Z]*\.(hpp|cpp|h))"',line)
+    if m == None:
+        return None
+    else:
+        #print m
+        return m.group(1)
+
+
+def getAllIncludes(file):
+    f = open(file)
+    result = []
+    for x in f.readlines():
+        s = getIncludeFile(x)
+        if s != None:
+            result.append(s)
+    f.close()
+    return result
+    
+seen = []
+
+def getIncludedFiles(file):
+    if file in seen:
+        return
+    seen.append(file)
+    result = getAllIncludes(file)
+    for x in result:
+        if x not in seen:
+            getIncludedFiles(x)
+
+def containInclude(startFile,badInclude):
+    seen = []
+    getIncludedFiles(startFile)
+    
+    result = []
+    for x in seen:
+        for y in getAllIncludes(x):
+            if y == badInclude:
+                result.append(x)
+                break
+    return result
+if __name__ == '__main__':
+    startFile = "proof.cpp"
+    getIncludedFiles(startFile)
+    print "\n".join(seen)
+    
+    print "\nIn " + startFile + ":"
+    print "\n".join(getAllIncludes(startFile))    

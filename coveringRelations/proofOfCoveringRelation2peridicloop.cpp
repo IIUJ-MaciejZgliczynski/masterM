@@ -1,10 +1,10 @@
+
+
 #include "vectorconversion.hpp"
-#include "graphicstuff.hpp"
-#include "filereading.hpp"
+//#include "graphicstuff.hpp"
+//#include "filereading.hpp"
 #include "imichelsonpoincaremap.hpp"
 #include "drawingorbits.hpp"
-
-
 #include <capd/covrel/GraphicsTripleSet.h>
 #include <capd/covrel/TripleSet.h>
 #include <cmath>
@@ -16,17 +16,16 @@
 
 using namespace std;
 
+
 typedef capd::covrel::TripleSet tset;
 typedef capd::covrel::GridSet<IMatrix> GridSet;
 
 #define NOPOSITIVEMESSAGE
 #define DRAWSTUFF
 
-bool Icovering(tset & covering , tset & covered, int N = 99){
-	
+bool Icovering(tset & covering , tset & covered, int N = 99) {
 	//IMichelsonPoincareMap pm(20,0.1,0.49);
 	IMichelsonPoincareMapAndGridWrapper pm(20,0.1,0.49);
-	
 	/*
 	 * Tworzenie gridu zbioru i brzegow
 	 */
@@ -65,17 +64,17 @@ bool Icovering(tset & covering , tset & covered, int N = 99){
 	 * Sprawdzam czy brzeg ktory mial sie splaszczyc sie rzeczywscie splaszczyl
 	 */
 	AcrossChecker acrossChecker(covered);
-	if (hof::forall(bottomEdgeImage.begin(), bottomEdgeImage.end(), acrossChecker)){
+	if (hof::forall(bottomEdgeImage.begin(), bottomEdgeImage.end(), acrossChecker)) {
 			#ifndef NOPOSITIVEMESSAGE
 			cout << "Bottom edge is good " << endl;
 			#endif
 	}
-	else{
+	else {
 		cout << "Bottome edge is not good " << endl;
 		return false;
 	}
 	
-	if (hof::forall(topEdgeImage.begin(), topEdgeImage.end(), acrossChecker)){
+	if (hof::forall(topEdgeImage.begin(), topEdgeImage.end(), acrossChecker)) {
 		#ifndef NOPOSITIVEMESSAGE
 		    cout << "Top edge is good " << endl;
 		    #endif
@@ -94,12 +93,12 @@ bool Icovering(tset & covering , tset & covered, int N = 99){
 	if ((hof::forall(leftEdgeImage.begin(), leftEdgeImage.end(),onTheLeftChecker) &&
 		hof::forall(rightEdgeImage.begin(), rightEdgeImage.end(), onTheRightChecker)) ||
 		(hof::forall(leftEdgeImage.begin(), leftEdgeImage.end(),onTheRightChecker) &&
-		hof::forall(rightEdgeImage.begin(), rightEdgeImage.end(), onTheLeftChecker))){
+		hof::forall(rightEdgeImage.begin(), rightEdgeImage.end(), onTheLeftChecker))) {
 			#ifndef NOPOSITIVEMESSAGE
 			cout << "Unstable edges also good";
 			#endif
 		}
-	else{
+	else {
 		cout << "Unstable edges not well" << endl;
 		return false;
 	}
@@ -111,10 +110,11 @@ bool Icovering(tset & covering , tset & covered, int N = 99){
 	return true;
 }
 
-const char * toString(bool cond){
+const char * toString(bool cond) {
 	return cond ? "true" : "false";
 }
-int main(){
+
+int main(int argc, char ** argv) {
 	tset ts2_0 = getGoodTripleSet("2_0");
 	tset ts3_1 = getGoodTripleSet("3_1");
 	tset ts4_3 = getGoodTripleSet("4_3");
@@ -132,6 +132,4 @@ int main(){
 	cout << "\n4_0 covers 4_2 " << toString(Icovering(ts4_0,ts4_2)) << endl;
 	cout << "\n4_2 covers 3_1 " << toString(Icovering(ts4_2,ts3_1)) << endl;
 	
-	
-
 }

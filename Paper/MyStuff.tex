@@ -5,13 +5,13 @@
 
 W tej pracy mamy jedynie doczynienia z {\em h-setami} na płaszczyźnie które mają dokładnie jeden kierunek 
 nominalnie stabilny i niestabilny. Dlatego będziemy reprezentować nasze h-sety  w jako następujące trójki 
-$ (x,s,u) $, gdzie $x,s,u \in \mathbb R^2 $ i $s,u$ sa liniowo niezależne. wtedy definuijemy 
+$ (x,s,u) $, gdzie $x,s,u \in \mathbb R^2 $ i $s,u$ są liniowo niezależne. wtedy definiujemy 
 $$
   |N| := \{v \in \mathbb R^2 | \exists_{t_1,t_2 \in [-1,1]} \quad v = x + t_1 \cdot s + t_2 \cdot u  \}
       = x + [-1,1]\cdot s + [-1,1]\cdot u 
 $$
 
-Homemorfizm $ c_N $ jest odzwzorowaniem afiniczym zdefiniowanym w nastepujacy sposób 
+Homeomorfizm $ c_N $ jest odwzorowaniem afinicznym zdefiniowanym w następujący sposób 
 $$
   c_N(v) = A^{-1}(v - x) 
 $$
@@ -49,9 +49,9 @@ wykazać, że zachodzą następujące warunki :
 Oczywiście jeżeli $ N \cover{f} M $ to powyższe dwa warunki są spełnione.
 Pierwszy warunek wynika z faktu, że mając $h_c $ homotopie z definicji relacji nakrywającej z warunku 
 $ h([0,1],N_c) \cap M^+_c = \emptyset $ wynika pierwszy warunek. Z warunku $ h([0,1],N^-_c) \cap M_c = \emptyset $ i z faktu, że nasze 
-odzworowanie jest homotopijne z rzutowaniem, którego stopień po zawężeniu dziedziny do obrazu jest niezerowy wynika drugi warunk.
+odwzorowanie jest homotopijne z rzutowaniem, którego stopień po zawężeniu dziedziny do obrazu jest niezerowy wynika drugi warunku.
 
-Implikacja w drugą strone też nie jest trudna. Mianowice zakładając, że zachodzą powyższe dwa warunki można wskazać odpowiednią homotopię,
+Implikacja w drugą stronę też nie jest trudna. Mianowice zakładając, że zachodzą powyższe dwa warunki można wskazać odpowiednią homotopię,
 która spełni warunki z relacji nakrywającej.
 Mianowicie :
 
@@ -65,11 +65,12 @@ Tak zdefiniowana homotopia spełnia warunki z definicji relacji nakrywającej, p
 \begin{enumerate}
  \item $ h_0(x) = h(0,x) = 0 \cdot p \cdot x + (1-0) \cdot f(x) = f(x) $
  \item Niech $ x \in N^-_c $, wtedy z wyboru p wynika, że oba elementy których bierzemy kombinacje wypukłą leżą albo w $ M^L $ albo w $ M^R$ 
- te dwa zbiory są wypukłe a więc ich kombinacja również należy do tego zbioru. Oczywiscie są one rozłączne z $ M_c$.
- \item Poniważ $ \mathbb R^2 \ (M^T \cup M^B) $ jest zbiorem wypukłym i oba element których kombinacje wypukłą rozważamy należą 
+ te dwa zbiory są wypukłe a więc ich kombinacja również należy do tego zbioru. Oczywiście są one rozłączne z $ M_c$.
+ \item Ponieważ $ \mathbb R^2 \ (M^T \cup M^B) $ jest zbiorem wypukłym i oba element których kombinacje wypukłą rozważamy należą 
  zbioru to ich kombinacja również.
- \item Drugi punkt definicji relacji nakrywającej jest również spełniony w trywialny sposób ponieważ nasze liniowe odzorowanie to jest poprostu
- $ x \to p \cdot x $ gdzie $ p $ = 2 lub -2. Czyli ma niezerowy stopień. Mianowcie 1 lub -1.
+ \item Drugi punkt definicji relacji nakrywającej jest również spełniony w trywialny sposób ponieważ nasze liniowe 
+ odwzorowanie to jest po prostu
+ $ x \to p \cdot x $ gdzie $ p $ = 2 lub -2. Czyli ma niezerowy stopień. Mianowicie 1 lub -1.
 \end{enumerate}
 
 Czyli wszystkie warunki dla relacji nakrywającej są spełnione, a więc $N \cover{f,w} M $. Gdzie $ w \in \{-1,1\} $ 
@@ -79,25 +80,31 @@ warunki można wyrazić za pomocą odpowiednich nierówności. A więc możemy s
 \subsection{Kluczowy dowód}
 
 \begin{theorem}
-  Dla każdego paramtru $ c = 0.49 $ układ Michelson jest $ \Sigma_4 $ chaotyczny,
-  czyli, że istnieje odzorowanie Poincar'ego takie, że jest półsprzężone z pełnym sziftem na czterech symbolach.
+  Dla każdego parametru $ c = 0.49 $ układ Michelsona jest $ \Sigma_4 $ chaotyczny,
+  czyli, że istnieje odwzorowanie Poincar\'ego takie, że jest pół sprzężone z pełnym shiftem na czterech symbolach.
 \end{theorem}
 
 Dowód:
 
-By wykazać następujące twierdzenie będziemy badać odwzorowanie Poincare'go układu Michelsona z sekcją $ \theta $, zdefiniowaną wcześniej.
+By wykazać następujące twierdzenie będziemy badać odwzorowanie Poincar\'ego układu Michelsona z sekcją $ \theta $, zdefiniowaną wcześniej.
 Dla skrócenia zapisu będziemy utożsamiać naszą sekcje $ \theta $ z $ \mathbb R^2 $.
 Rozważmy następujące $ h-sety $ $ N_i = h(x_i,u_i,s_i) $ dla $ i \in 1 \cdots 5 $ :
 
-\begin{enumerate}
-\item $ x_1 = (0,0.88930181632132043745) $ $ u_1 = (-0.090000000000000010547,-0.036352256923916359543) $ $ s_1 = (0.090000000000000010547,-0.036352256923916359543) $ 
-\item $ x_2 = (0,-1.1688058965368766096) $ $ u_2 = (-0.045478496673335325196,-0.090000000000000010547) $ $ s_2 = (0.041769254863549584722,-0.090000000000000010547) $ 
-\item $ x_3 = (0,-0.21856378422848130039) $ $ u_3 = (0.10799999999999999878,-0.038322644233375995071) $ $ s_3 = (-0.10799999999999999878,-0.038322644233375995071) $ 
-\item $ x_4 = (0.61254887767896715189,0.655149395511700261) $ $ u_4 = (-0.04950000000000000927,-0.022192443886905721673) $ $ s_4 = (0.13050000000000000488,-0.057865711545585452047) $ 
-\item $ x_5 = (-0.61254887767896715189,0.655149395511700261) $ $ u_5 = (-0.13050000000000000488,-0.057865711545585452047) $ $ s_5 = (0.04950000000000000927,-0.022192443886905721673) $ 
-\end{enumerate}
+\begin{eqnarray*}
+ x_1 & = &(0,0.88930181632132043745) \\  u_1 & = & (-0.090000000000000010547,-0.036352256923916359543) \\
+ s_1 & = & (0.090000000000000010547,-0.036352256923916359543) \\
+ x_2 & = & (0,-1.1688058965368766096) \\ u_2 & = &(-0.045478496673335325196,-0.090000000000000010547) \\
+ s_2 & = &(0.041769254863549584722,-0.090000000000000010547) \\
+ x_3 & = & (0,-0.21856378422848130039)\\  u_3 & = & (0.10799999999999999878,-0.038322644233375995071) \\
+ s_3 & = &(-0.10799999999999999878,-0.038322644233375995071) \\
+ x_4 & = & (0.61254887767896715189,0.655149395511700261) \\ u_4 & = & (-0.04950000000000000927,-0.022192443886905721673) \\
+ s_4 & = & (0.13050000000000000488,-0.057865711545585452047) \\
+ x_5 & = & (-0.61254887767896715189,0.655149395511700261)  \\ u_5 & = & (-0.13050000000000000488,-0.057865711545585452047) \\
+ s_5 & = & (0.04950000000000000927,-0.022192443886905721673) \\
+\end{eqnarray*}
 
-Niech $ N = \bigcup^5_{i=1} | N_i| $. Niech $ P : \theta \oarrow \theta $ oznacza odwzorowanie Poincare dla układu Michelsona z parametrem $ c = 0.49 $
+Niech $ N = \bigcup^5_{i=1} | N_i| $. Niech $ P : \theta \oarrow \theta $ oznacza odwzorowanie Poincare\'go dla 
+układu Michelsona z parametrem $ c = 0.49 $
 
 \begin{lemma}
 \label{num:cov}
@@ -108,31 +115,31 @@ Niech $ N = \bigcup^5_{i=1} | N_i| $. Niech $ P : \theta \oarrow \theta $ oznacz
     N_2 \cover{P} N_5 \cover{P} N_3 \cover{P} N_4 \cover{P} N_2 
  \end{eqnarray*}
  
- Dowód komputerowy tego lematu, można przeprowadzić za pomocą załącznonego oprogramowania do tej pracy.
- Warto zauważyć, że te dwie relacje nakrywające są istotnie różne ale mają jeden element wspólny mianowice $ N_2 $.
+ Dowód komputerowy tego lematu, można przeprowadzić za pomocą załączonego oprogramowania do tej pracy.
+ Warto zauważyć, że te dwie relacje nakrywające są istotnie różne ale mają jeden element wspólny mianowicie $ N_2 $.
  
 
 \end{lemma}
-Uwaga do dowodu numerycznego. Udowodniamy, wszystkie relacje nakrywajace 
-Korzystając z tego lematu możemy przejść do dowodu kluczowego twierdznie w tej pracy.
+Uwaga do dowodu numerycznego. Udowodniamy, wszystkie relacje nakrywające 
+Korzystając z tego lematu możemy przejść do dowodu kluczowego twierdzenie w tej pracy.
 Dowód:
-Zdefiniujmy $ \Sigma_2 = \{ 2,5 \} $ i odzworowanie szift 
+Zdefiniujmy $ \Sigma_2 = \{ 2,5 \} $ i odwzorowanie shift 
 $$
   \sigma : \Sigma_2 \ni (x_i)_{i \ in \mathbb Z} \to (x_{i+1})_{i \in \mathbb Z } \in \Sigma_2
 $$
 
 Niech $ p : | N_2 | \cup | N_5 | \oarrow \Sigma2 $ będzie zdefiniowana w następujący sposób:
 \begin{eqnarray*}
-  dom(p) := \{ x \Theta | \forall j \in \mathbb Z, x \in dom(P^{4j}), P^{4j}(x) \in |N_2| cup |N_5| \} \\ 
+  dom(p) := \{ x \Theta | \forall j \in \mathbb Z, x \in dom(P^{4j}), P^{4j}(x) \in |N_2| \cup |N_5| \} \\ 
   p(x) = (i_j) j \in \mathbb Z \Leftrightarrow P^{4j}(x) \in |N_{i_j}, \text{ dla } x \in dom(p)
 \end{eqnarray*}
 
-Poniważ zbiory $ N_2, N_5 $ są rozłączne defnincja naszego odzorowania jest poprawna. Cowięcej dla $ x \in dom(p) $ zachodzi :
+Ponieważ zbiory $ N_2, N_5 $ są rozłączne definicją naszego odwzorowania jest poprawna. Co więcej dla $ x \in dom(p) $ zachodzi :
 $$
   p(P^4(x)) = \sigma(p(x))
 $$
 .
-Z relacji nakrywających wykazanych w \ref{num:cov}. Możemy wynwnioskować, że zachodzą następujące relacje nakrywające dla odzowrowania $ P $
+Z relacji nakrywających wykazanych w \ref{num:cov}. Możemy wywnioskować, że zachodzą następujące relacje nakrywające dla odwzorowania $ P $
 \begin{eqnarray*}
   N_2 \cover{P} N_1 \cover{P} N_2 \cover{P} N_1 \cover{P} N_5 \\
   N_2 \cover{P} N_1 \cover{P} N_2 \cover{P} N_1 \cover{P} N_2 \\
@@ -145,13 +152,13 @@ Z relacji nakrywających wykazanych w \ref{num:cov}. Możemy wynwnioskować, że
   N_2 \cover{ P^4 } N_5 \\
   N_2 \cover{ P^4 } N_2 \\
   N_5 \cover{ P^4 } N_2 \\
-  N_5 \cover{ P^4 } N_5 \\
+  N_5 \cover{ P^4 } N_5 
 \end{eqnarray*}
 
-Z tych relacji i z twiredznia \ref{th:top} otrzymujemy, że odzoworowanie $ p $ jest dobrze określone. Mianowice dowolny $ x \in \Sigma_2 $ 
-jest relaziowany jako pełna orbita. Z twierdznia \ref{th:top} wynika, że dla każdej pełnej orbity istnieje punkt, który ją realizuje. Co więcej
-jeżeli element $ x \in \Sigma_2 $ jest okresowy, to isntieje punkt w $ p^{-1} $ który jest okresowy. 
-W ten sposób wykazaliśmy, że czwarta iteracja naszego odzoworawania Poincare jest półsprzężona z pełnym sziftem na dwóch symbolach.
+Z tych relacji i z twierdzenia \ref{th:top} otrzymujemy, że odwzorowanie $ p $ jest dobrze określone. Mianowice dowolny $ x \in \Sigma_2 $ 
+jest realizowany jako pełna orbita. Z twierdzenia \ref{th:top} wynika, że dla każdej pełnej orbity istnieje punkt, który ją realizuje. Co więcej
+jeżeli element $ x \in \Sigma_2 $ jest okresowy, to istnieje punkt w $ p^{-1} $ który jest okresowy. 
+W ten sposób wykazaliśmy, że czwarta iteracja naszego odwzorowania Poincare\' jest pół sprzężona z pełnym shiftem na dwóch symbolach.
 
 
 

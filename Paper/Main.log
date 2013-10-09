@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.11.21)  6 OCT 2013 16:59
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.11.21)  8 OCT 2013 00:57
 entering extended mode
  %&-line parsing enabled.
 **Main.tex
@@ -481,71 +481,23 @@ x[]\OT1/cmr/m/n/10 )$ \T1/cmr/m/it/10 jest \T1/cmr/m/n/10 okre-sow¡ or-bit¡ \T1
  []
 
 [9]) (./Dynamics.tex [10] [11] [12] [13] [14]) (./numeric.tex [15] [16]
-Overfull \hbox (12.95462pt too wide) in paragraph at lines 95--95
+Overfull \hbox (12.95462pt too wide) in paragraph at lines 96--96
 []\T1/cmr/bx/n/14.4 Metoda Tay-lor'a roz-wi¡-za-nia nu-me-rycz-nego rów-
  []
 
-[17]) (./Application.tex [18] [19]) (./MyStuff.tex [20] [21]
-Overfull \hbox (107.63466pt too wide) in paragraph at lines 93--94
-[]$\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 = (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 
-0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 88930181632132043745)$ $\OML/cmm/m/it/10 u[]
- \OT1/cmr/m/n/10 = (\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1
-/cmr/m/n/10 090000000000000010547\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^@\OT1/cm
-r/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 036352256923916359543)$
- []
-
-
-Overfull \hbox (110.41245pt too wide) in paragraph at lines 94--95
-[]$\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 = (0\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10
- ^^@\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1688058965368766096)$ $\
-OML/cmm/m/it/10 u[] \OT1/cmr/m/n/10 = (\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0\OM
-L/cmm/m/it/10 :\OT1/cmr/m/n/10 045478496673335325196\OML/cmm/m/it/10 ; \OMS/cms
-y/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0900000000000000
-10547)$
- []
-
-
-Overfull \hbox (102.63464pt too wide) in paragraph at lines 95--96
-[]$\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 = (0\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10
- ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 21856378422848130039)$ $
-\OML/cmm/m/it/10 u[] \OT1/cmr/m/n/10 = (0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1079
-9999999999999878\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cm
-m/m/it/10 :\OT1/cmr/m/n/10 038322644233375995071)$
- []
-
-
-Overfull \hbox (195.4127pt too wide) in paragraph at lines 96--97
-[]$\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 = (0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 6
-1254887767896715189\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/c
-mr/m/n/10 655149395511700261)$ $\OML/cmm/m/it/10 u[] \OT1/cmr/m/n/10 = (\OMS/cm
-sy/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 049500000000000
-00927\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :
-\OT1/cmr/m/n/10 022192443886905721673)$
- []
-
-
-Overfull \hbox (203.1905pt too wide) in paragraph at lines 97--98
-[]$\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 = (\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 
-0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 61254887767896715189\OML/cmm/m/it/10 ; \OT1/
-cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 655149395511700261)$ $\OML/cmm/m/
-it/10 u[] \OT1/cmr/m/n/10 = (\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it
-/10 :\OT1/cmr/m/n/10 13050000000000000488\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^
-@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 057865711545585452047)$
- []
-
-[22])
+[17] [18]) (./Application.tex [19]) (./MyStuff.tex [20] [21] [22] [23])
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 78.
- (/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
+
+(/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [23] [24] [25]
-(./Main.aux) ) 
+) [24] [25] [26] (./Main.aux) ) 
 Here is how much of TeX's memory you used:
- 2654 strings out of 493849
- 30710 string characters out of 1152845
+ 2657 strings out of 493849
+ 30732 string characters out of 1152845
  92569 words of memory out of 3000000
- 5848 multiletter control sequences out of 15000+50000
+ 5851 multiletter control sequences out of 15000+50000
  13259 words of font info for 33 fonts, out of 3000000 for 9000
  719 hyphenation exceptions out of 8191
  41i,12n,24p,289b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Main.dvi (25 pages, 97860 bytes).
+Output written on Main.dvi (26 pages, 101144 bytes).

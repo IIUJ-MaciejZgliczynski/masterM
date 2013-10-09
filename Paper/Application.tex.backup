@@ -9,8 +9,8 @@ Rozważmy równanie :
   u_t + \nabla^4u + \nabla^2u + \frac{1}{2}| \nabla u|^2 = 0
  \end{equation}
 
-Michelson[cyt] przeprowodzaił badanie tego równania. Zauważył, żę wcześniejsze badania [cyt] pokazują, ze jeśli równanie \ref{eq:kura} 
-ma rozwiązanie na dużym przedziele symetrycznym $ (-l,l) $ z okresowym warunkiem brzegowym to rozwiązania przyjmują postać 
+Michelson[cyt] przeprowadził badanie tego równania. Zauważył, że wcześniejsze badania [cyt] pokazują, ze jeśli równanie \ref{eq:kura} 
+ma rozwiązanie na dużym przedziale symetrycznym $ (-l,l) $ z okresowym warunkiem brzegowym to rozwiązania przyjmują postać 
 $ u(x,t) = -(c_0)^2t + v(x,t) $ gdzie $ c_0 \approx 1.04 $ oraz $ v $ jest quasi-okresową falą. Dlatego przyjął, że $ v $ nie zależy od 
 $ t $ i rozważał rozwiązania równania \ref{eq:kura} postaci $ u(x,t) = - c^2t + v(x) $. Jeżeli podstawimy $ y = v'$ to możemy przekształcić \ref{eq:kura}
 do postaci 
@@ -19,14 +19,14 @@ do postaci
   y^{'''} + y' = c^2 - \frac{1}{2}y^2
 \end{equation}
 
-Co można zapisać jako układ równań
+Co można zapisać jako układ równań nazywany układem Michelsona
 
 \begin{equation}\label{eq:michealsonSystem}
 \left\{
     \begin{array}{rcl}
         \dot x &=& y\\
         \dot y &=& z\\
-        \dot z &=& c^2 - \lambda y \frac{1}{2}x^2
+        \dot z &=& c^2 - \lambda y -\frac{1}{2}x^2
     \end{array}
 \right.
 \end{equation}
@@ -39,7 +39,7 @@ $$
 
 
 Układ posiada dwa punkty stacjonarne : $x_{-}(c) = (-c\sqrt{2},0,0) $ i $x_{-}(c) = (c\sqrt{2},0,0)$
-Co więcej zachowuje miare i odwzorowanie : $ {\mathbb R} ^4: \to {\mathbb R}^4 $ dane przez:
+Co więcej zachowuje miarę i odwzorowanie : $ {\mathbb R} ^4: \to {\mathbb R}^4 $ dane przez:
 
 \begin{equation}
    R(x,y,z,t) = (-x,y,-z,-t)
@@ -57,50 +57,68 @@ $$
 $$
 \end{theorem}
 
-\begin{theorem} {Troy}
- Rozważmy równanie \ref{eq:jednazmienna} z parametrem c = 1. Wtedy insteją co najmniej dwie symetryczne (nieparzyste) orbity
- heterokliniczne pomiędzy punktami sacjonarnymi $(y,y',y'') = (\pm \sqrt{2},0,0)$
+\begin{theorem} [Troy]
+ Rozważmy równanie \ref{eq:jednazmienna} z parametrem c = 1. Wtedy istnieją co najmniej dwie symetryczne (nieparzyste) orbity
+ heterokliniczne pomiędzy punktami stacjonarnymi $(y,y',y'') = (\pm \sqrt{2},0,0)$
  
 \end{theorem}
-Dla równania \eqref{eq:michealsonSystem}, chciałbym przytoczyć następujące wyniki przez naukaowców z naszego wydziału.
+Dla równania \eqref{eq:michealsonSystem}, chciałbym przytoczyć następujące wyniki przez naukowców z naszego wydziału.
 
 
-%\begin{theroem} {Mrozek, Żelawski}
-%  Dla parametru c = 1 oraz dla każdego $ \lambda \in [0,1] $ istnieje rozwiązanie heterokliniczne łączące punkt równowagi $(\sqrt{2},0,0) $ 
-%  oraz $(-\sqrt{2},0,0)$
-% 
-%\end{theroem}
+\begin{theorem} [Mrozek, Żelawski]
+  Dla parametru c = 1 oraz dla każdego $ \lambda \in [0,1] $ istnieje rozwiązanie heterokliniczne łączące punkt równowagi $(\sqrt{2},0,0) $ 
+  oraz $(-\sqrt{2},0,0)$
+ 
+\end{theorem}
 
 Kładąc w rówaniu \eqref{eq:michealsonSystem} $ \lambda = 1 $
 Daniel Wilczak uzyskał między innymi następujący wyniki.
 
 \begin{theorem}[Wilczak]
-  Dla każdego paramtru $ c \in [0.8285,0.861] $ układ Michelson jest $ \Sigma_4 $ chaotyczny,
-  czyli, że istnieje odzorowanie Poincar'ego takie, że jest półsprzężone z pełnym sziftem na czterech symbolach.
+  Dla każdego parametru $ c \in [0.8285,0.861] $ układ Michelsona jest $ \Sigma_4 $ chaotyczny,
+  czyli, że istnieje odwzorowanie Poincar\'ego takie, że jest pół sprzężone z pełnym shiftem na czterech symbolach.
 \end{theorem}
 
 
 \subsection{Symetria w równaniach Kuramoto-Sivashinskiego}
-W równaniach Kuramato-Sivashinskiego występuje następująca symetria odwracania czasu 
+
+W równaniach Kuramoto-Sivashinskiego występuje następująca symetria odwracania czasu 
+
 $$
   R(x,y,z) = (-x,y,-z).
 $$
-Z istienia tej symetri wynioskukemy, że dowolne rozwiązanie o warunku początkowym $x(0) = z(0) = 0 $ 
-jest symetryczne względem osi y. Ponadtko jeśli takie rozwiązanie dwukrotrnie przetnie oś y to musi być rozwiązaniem okresowym.
+Z istnienia tej symetrii wywnioskujemy, że dowolne rozwiązanie o warunku początkowym $x(0) = z(0) = 0 $ 
+jest symetryczne względem osi y. Ponadto jeśli takie rozwiązanie dwukrotnie przetnie oś y to musi być rozwiązaniem okresowym.
 
 
 
 W tej pracy będziemy badać równianie \eqref{eq:michealsonSystem} dla parametru $ \lambda = 1$.
-Zauważmy, że pole wektorowe równania \eqref{eq:michealsonSystem} jest styczne do płasczyzny (x,y,0) 
+Zauważmy, że pole wektorowe równania \eqref{eq:michealsonSystem} jest styczne do płaszczyzny $(x,y,0) $
 tylko na paraboli 
 $$
-      L := \{ (x,c^2 - \frac{1}{2} x^2,0) | x \in mathbb R\}.
+      L := \{ (x,c^2 - \frac{1}{2} x^2,0) | x \in \mathbb R\}.
 $$
 
 W związku z tym możemy określić lokalną sekcje równania \eqref{eq:michealsonSystem} jako 
 $$
-  \Theta := \{(x,y,0) | x,y \in mathbb R \} \L.
+  \Theta := \{(x,y,0) | x,y \in \mathbb R \} .
 $$
 
-W oczywisty sposób by określić punkt na $\Theta$ musimy jedynie podać pierwsze dwie współrzędne, ponieważ 
-trzecia jest stale równa 0.  Od tej pory tak czynić by określić punkt $\Theta$
+Sekcja $ \Theta $ wybraliśmy w ten sposób by trzecia współrzędna była stale równa 0, 
+a więc by określić punkt na niej musimy podać jedynie współrzędne (x,y) i tak od tej pory będziemy czynić.
+Zauwżmy również, że $ R(\Theta) = \Theta $ a więc z lematu \eqref{lem:poincareReverse} istnieje symetria odwrócenia czasu dla odwzorowania Poincar'ego
+$ P : \Theta \oarrow \Theta $. Będziemy ją również ozanczać R. Nie będzie to prowadziało do żadnych niejednoznaczności pinieważ od tej pory będziemy
+zajmowali się jedynie dynamiką na $ \Theta$ .
+Reasumując nasze odwzorwanie $ P : \Theta \oarrow \Theta $ spełnia następujący warunek:
+
+\begin{equation}
+  \forall u \in dom(P) \quad R(u) \in dom(P^{-1}) , R(P(u)) = P^{-1}(R(u)),
+\end{equation}
+dla $ R(x,y) = (-x,y) $ 
+
+Głównym twierdzeniem, które wykaże w tej pracy 
+\begin{theorem}
+  Dla każdego paramtru $ c = 0.49 $ układ Michelson jest $ \Sigma_4 $ chaotyczny,
+  czyli, że istnieje odzorowanie Poincar'ego takie, że jest półsprzężone z pełnym sziftem na czterech symbolach.
+\end{theorem}
+
